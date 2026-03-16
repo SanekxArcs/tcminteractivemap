@@ -1,7 +1,9 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { PLAYLISTS, ACTIVITIES, MISC_ITEMS, RIVALS_ITEMS } from '../data/playlistConfig';
 
-function buildInitialState() {
+const STORAGE_KEY = 'tcm-map-filters';
+
+function buildDefaultState() {
   const playlists = {};
   PLAYLISTS.forEach(p => { playlists[p.filterKey] = true; });
 
@@ -12,13 +14,34 @@ function buildInitialState() {
   MISC_ITEMS.forEach(m => { misc[m.id] = true; });
 
   const rivals = {};
-  RIVALS_ITEMS.forEach(r => { rivals[r.id] = false; }); // rivals off by default
+  RIVALS_ITEMS.forEach(r => { rivals[r.id] = false; });
 
   return { playlists, activities, misc, rivals };
 }
 
+function buildInitialState() {
+  const defaults = buildDefaultState();
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return {
+        playlists:  { ...defaults.playlists,  ...parsed.playlists },
+        activities: { ...defaults.activities, ...parsed.activities },
+        misc:       { ...defaults.misc,       ...parsed.misc },
+        rivals:     { ...defaults.rivals,     ...parsed.rivals },
+      };
+    }
+  } catch {}
+  return defaults;
+}
+
 export function useFilters() {
   const [filters, setFilters] = useState(buildInitialState);
+
+  useEffect(() => {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(filters)); } catch {}
+  }, [filters]);
 
   const togglePlaylist = useCallback((key) => {
     setFilters(prev => ({
@@ -80,7 +103,6 @@ export function useFilters() {
     });
   }, []);
 
-  // Toggle all playlists in a group (used by section headers)
   const toggleSection = useCallback((section) => {
     setFilters(prev => {
       const group = prev[section];

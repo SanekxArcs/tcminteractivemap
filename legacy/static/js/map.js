@@ -11,7 +11,7 @@ var map = L.map('map', {
 var bounds = [[0,0], [3579,6707]];
 
 // Expanded bounds for the case when user tries to go far from the map
-var expandedBounds = [[bounds[0][0] - 3000, [bounds[0][1] - 4000]], 
+var expandedBounds = [[bounds[0][0] - 3000, [bounds[0][1] - 4000]],
                         [bounds[1][0] + 3000, [bounds[1][1] + 4000]]]
 var image = L.imageOverlay('img/oahu_maui.webp', bounds).addTo(map);
 

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import FilterSection from './FilterSection';
 import ChallengeAccordion from './ChallengeAccordion';
+import SearchBar from '../Search/SearchBar';
 import { PLAYLISTS, ACTIVITIES, MISC_ITEMS, RIVALS_ITEMS, PLAYLIST_ICON_BY_NAME } from '../../data/playlistConfig';
 
 function getSidebarWidth() {
@@ -24,6 +25,12 @@ export default function Sidebar({
   challengesMeta,
   onChallengeSelect,
   activeChallenge,
+  playlistData,
+  miscData,
+  rivalsData,
+  challengesData,
+  regionsData,
+  flyTo,
 }) {
   const [closed, setClosed] = useState(false);
   const sidebarRef = useRef(null);
@@ -71,6 +78,16 @@ export default function Sidebar({
             Starting season 9 maintained by <br /> Sanekx Arcs and SnowLeopard
           </p>
         </div>
+
+        {/* Search */}
+        <SearchBar
+          playlistData={playlistData}
+          miscData={miscData}
+          rivalsData={rivalsData}
+          challengesData={challengesData}
+          regions={regionsData}
+          flyTo={flyTo}
+        />
 
         {/* Settings bar */}
         <div className="sb-settings">

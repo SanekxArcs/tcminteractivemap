@@ -77,6 +77,108 @@
   margin: 0;
 }
 
+/* ── Search bar ────────────────────────────── */
+.sb-search {
+  position: relative;
+  padding: 8px 10px;
+  background: var(--sb-surface);
+  border-bottom: 1px solid var(--sb-border);
+}
+.sb-search-inner {
+  display: flex;
+  align-items: center;
+  background: var(--sb-bg);
+  border: 1px solid var(--sb-border);
+  border-radius: var(--sb-radius);
+  padding: 0 8px;
+  gap: 6px;
+  transition: border-color 0.15s;
+}
+.sb-search-inner:focus-within { border-color: #444; }
+.sb-search-icon { color: var(--sb-muted); flex-shrink: 0; }
+.sb-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--sb-text);
+  font-size: 12px;
+  padding: 8px 0;
+  font-family: Arial, sans-serif;
+}
+.sb-search-input::placeholder { color: var(--sb-muted); }
+.sb-search-clear {
+  background: none;
+  border: none;
+  color: var(--sb-muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.sb-search-clear:hover { color: var(--sb-text); }
+.sb-search-results {
+  position: absolute;
+  top: calc(100% - 8px);
+  left: 10px;
+  right: 10px;
+  background: var(--sb-surface);
+  border: 1px solid var(--sb-border);
+  border-top: none;
+  border-radius: 0 0 var(--sb-radius) var(--sb-radius);
+  z-index: 9999;
+  max-height: 320px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.sb-search-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #1e1e24;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+.sb-search-result:last-child { border-bottom: none; }
+.sb-search-result:hover { background: var(--sb-surface2); }
+.sb-search-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  min-width: 52px;
+  text-align: center;
+}
+.sb-search-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sb-search-label {
+  font-size: 12px;
+  color: var(--sb-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sb-search-sub {
+  font-size: 10px;
+  color: var(--sb-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ── Settings bar ──────────────────────────── */
 .sb-settings {
   border-bottom: 1px solid var(--sb-border);

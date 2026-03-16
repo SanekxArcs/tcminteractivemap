@@ -380,6 +380,41 @@ input:checked + .slider:before { transform: translateX(21px); }
   border-color: #00dd00;
 }
 
+/* ── Marker hover tooltips ───────────────────────────────────── */
+.map-tooltip {
+  background: rgba(13,13,15,0.92) !important;
+  border: 1px solid #2a2a35 !important;
+  color: #e8e8f0 !important;
+  font-size: 11px !important;
+  font-family: Arial, sans-serif !important;
+  padding: 4px 9px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+  white-space: nowrap;
+}
+.map-tooltip::before {
+  border-top-color: #2a2a35 !important;
+}
+
+/* ── Region name labels ───────────────────────────────────────── */
+.region-label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+.region-label span {
+  display: block;
+  color: rgba(255,255,255,0.28);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.7);
+  white-space: nowrap;
+  user-select: none;
+}
+
 /* ── CSS-based challenge map markers ─────────────────────────── */
 .chal-icon {
   width: 28px;

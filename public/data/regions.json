@@ -1,0 +1,18 @@
+[
+  { "name": "North Shore",     "lat": 2950, "lng": 1400 },
+  { "name": "Haleiwa",         "lat": 2720, "lng": 1820 },
+  { "name": "Central Oahu",    "lat": 2200, "lng": 2150 },
+  { "name": "Ko Olina",        "lat": 1680, "lng": 1050 },
+  { "name": "Pearl Harbor",    "lat": 1600, "lng": 1900 },
+  { "name": "Honolulu",        "lat": 1150, "lng": 2550 },
+  { "name": "Waikiki",         "lat": 950,  "lng": 2950 },
+  { "name": "Diamond Head",    "lat": 880,  "lng": 3450 },
+  { "name": "Kailua",          "lat": 1750, "lng": 4100 },
+  { "name": "Kaneohe",         "lat": 2150, "lng": 3950 },
+  { "name": "Maui",            "lat": 2400, "lng": 5700 },
+  { "name": "Kahului",         "lat": 2550, "lng": 5300 },
+  { "name": "Lahaina",         "lat": 2000, "lng": 4950 },
+  { "name": "Kihei",           "lat": 1550, "lng": 5250 },
+  { "name": "Haleakala",       "lat": 2900, "lng": 5900 },
+  { "name": "Road to Hana",    "lat": 1900, "lng": 6350 }
+]

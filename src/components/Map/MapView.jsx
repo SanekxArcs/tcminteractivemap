@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { MapContainer, ImageOverlay, ZoomControl, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -6,12 +6,12 @@ import "leaflet/dist/leaflet.css";
 import PlaylistLayer from "./PlaylistLayer";
 import MiscLayer from "./MiscLayer";
 import ChallengeLayer from "./ChallengeLayer";
+import RegionLayer from "./RegionLayer";
 import DevCoordinatePicker from "../Dev/DevCoordinatePicker";
 import { PLAYLISTS } from "../../data/playlistConfig";
 
 const IS_DEV_MODE = new URLSearchParams(window.location.search).has("dev");
 
-// Map bounds match the image dimensions (see legacy/static/js/map.js)
 const BOUNDS = [
   [0, 0],
   [3579, 6707],
@@ -33,14 +33,24 @@ function MapSetup() {
   return null;
 }
 
+function MapController({ onMapReady }) {
+  const map = useMap();
+  const cbRef = useRef(onMapReady);
+  cbRef.current = onMapReady;
+  useEffect(() => { cbRef.current(map); }, [map]);
+  return null;
+}
+
 export default function MapView({
   playlistData,
   miscData,
   rivalsData,
   challengesData,
+  regionsData,
   filters,
   activeChallenge,
   onMarkerClick,
+  onMapReady,
 }) {
   return (
     <MapContainer
@@ -60,8 +70,11 @@ export default function MapView({
       }}
     >
       <MapSetup />
+      <MapController onMapReady={onMapReady} />
       <ZoomControl position="bottomright" />
       <ImageOverlay url="/img/oahu_maui.webp" bounds={BOUNDS} />
+
+      <RegionLayer regions={regionsData} />
 
       {PLAYLISTS.map((p) => (
         <PlaylistLayer

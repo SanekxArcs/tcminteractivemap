@@ -28,7 +28,6 @@ export default function DevCoordinatePicker() {
   const [minimized, setMinimized]   = useState(false);
   const panelRef                    = useRef(null);
 
-  // Prevent Leaflet from receiving native DOM events fired inside the panel
   useEffect(() => {
     if (panelRef.current) {
       L.DomEvent.disableClickPropagation(panelRef.current);

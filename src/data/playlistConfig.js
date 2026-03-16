@@ -32,7 +32,6 @@ export const PLAYLISTS = [
   { id: 'ferrari',    name: 'Ferrari Supercars',         filterKey: 'ferrari',    icon: '/img/Ferrari/ferrari_event.png' },
 ];
 
-// Map playlist name → icon path for the challenges accordion
 export const PLAYLIST_ICON_BY_NAME = Object.fromEntries(
   PLAYLISTS.map(p => [p.name, p.icon])
 );

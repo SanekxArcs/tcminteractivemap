@@ -3,9 +3,10 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { getContainerIcon, getEventIcon, collectibleIcon, photoOpIcon, featIcons } from './icons';
 
-function addMarker(latlng, icon, toastData, group, onMarkerClick) {
+function addMarker(latlng, icon, toastData, tooltipText, group, onMarkerClick) {
   const m = L.marker(latlng, { icon });
   m.on('click', () => onMarkerClick(toastData));
+  if (tooltipText) m.bindTooltip(tooltipText, { direction: 'top', offset: [0, -12], className: 'map-tooltip' });
   m.addTo(group);
   return m;
 }
@@ -37,7 +38,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         type: 'container',
         name,
         subtitle: 'Container',
-      }, groups.container, onMarkerClick);
+      }, `${name} Container`, groups.container, onMarkerClick);
     }
 
     events.forEach(ev => {
@@ -53,7 +54,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         ],
         xp:    ev.xp,
         bucks: ev.bucks,
-      }, groups.events, onMarkerClick);
+      }, ev.name, groups.events, onMarkerClick);
     });
 
     feats.forEach(feat => {
@@ -67,7 +68,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         ],
         xp:    feat.xp,
         bucks: feat.bucks,
-      }, groups.feats, onMarkerClick);
+      }, `${feat.location} — ${feat.featType}`, groups.feats, onMarkerClick);
     });
 
     photoOps.forEach(photo => {
@@ -76,7 +77,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         name: photo.name,
         subtitle: `Photo Op · ${name}`,
         requirements: photo.requirements || [],
-      }, groups.photo_ops, onMarkerClick);
+      }, photo.name, groups.photo_ops, onMarkerClick);
     });
 
     collectibles.forEach(col => {
@@ -84,7 +85,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         type: 'collectible',
         name,
         subtitle: `Collectible · ${col.challenge}`,
-      }, groups.collectibles, onMarkerClick);
+      }, `${col.challenge} (Collectible)`, groups.collectibles, onMarkerClick);
     });
 
     layersRef.current = groups;
@@ -95,7 +96,6 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
     };
   }, [data, onMarkerClick]);
 
-  // Reactively add/remove layers based on filters
   useEffect(() => {
     const groups = layersRef.current;
     if (!groups || Object.keys(groups).length === 0) return;

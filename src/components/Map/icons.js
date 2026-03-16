@@ -1,6 +1,5 @@
 import L from 'leaflet';
 
-// Cache icons so they aren't recreated on every render
 const iconCache = {};
 
 function makeIcon(url, size, anchor, popupAnchor) {
@@ -43,7 +42,6 @@ export const miscIcons = {
   treasure:     makeIcon('/img/Misc/treasure.png',           [28, 40], [14, 40], [0, -30]),
 };
 
-// CSS-based challenge markers — no external images needed
 export const challengeIcons = {
   start:     makeDivIcon('<div class="chal-icon chal-start">S</div>',     '', [28, 28], [14, 28]),
   finish:    makeDivIcon('<div class="chal-icon chal-finish">F</div>',    '', [28, 28], [14, 28]),

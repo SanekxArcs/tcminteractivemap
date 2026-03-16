@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { useFilters } from './hooks/useFilters';
 import { useMapData } from './hooks/useMapData';
 import MapView from './components/Map/MapView';
@@ -9,11 +9,17 @@ import challengesMeta from './data/challengesMeta.json';
 export default function App() {
   const { filters, togglePlaylist, toggleActivity, toggleMisc, toggleRival,
           toggleSection, hideAll, showAll } = useFilters();
-  const { playlistData, miscData, rivalsData, challengesData } = useMapData();
+  const { playlistData, miscData, rivalsData, challengesData, regionsData } = useMapData();
 
   const [challengesMode, setChallengesMode] = useState(false);
   const [activeChallenge, setActiveChallenge]  = useState(null);
   const [toastData, setToastData]              = useState(null);
+
+  const mapRef = useRef(null);
+  const handleMapReady = useCallback((map) => { mapRef.current = map; }, []);
+  const flyTo = useCallback((lat, lng, zoom = 1) => {
+    mapRef.current?.flyTo([lat, lng], zoom, { duration: 0.8 });
+  }, []);
 
   const handleMarkerClick = useCallback((data) => setToastData(data), []);
 
@@ -24,9 +30,11 @@ export default function App() {
         miscData={miscData}
         rivalsData={rivalsData}
         challengesData={challengesData}
+        regionsData={regionsData}
         filters={filters}
         activeChallenge={activeChallenge}
         onMarkerClick={handleMarkerClick}
+        onMapReady={handleMapReady}
       />
       <Sidebar
         filters={filters}
@@ -45,6 +53,12 @@ export default function App() {
         challengesMeta={challengesMeta}
         onChallengeSelect={setActiveChallenge}
         activeChallenge={activeChallenge}
+        playlistData={playlistData}
+        miscData={miscData}
+        rivalsData={rivalsData}
+        challengesData={challengesData}
+        regionsData={regionsData}
+        flyTo={flyTo}
       />
       <MarkerToast data={toastData} onClose={() => setToastData(null)} />
     </>
