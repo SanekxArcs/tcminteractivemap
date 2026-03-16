@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef } from 'react';
+import L from 'leaflet';
+import { useEffect, useRef, useState } from 'react';
 import { useMapEvents } from 'react-leaflet';
 
 const POINT_TYPES = [
@@ -21,11 +22,18 @@ function MapClickHandler({ onMapClick }) {
 }
 
 export default function DevCoordinatePicker() {
-  const [points, setPoints]       = useState([]);
+  const [points, setPoints]         = useState([]);
   const [activeType, setActiveType] = useState('event');
-  const [copied, setCopied]       = useState(false);
-  const [minimized, setMinimized] = useState(false);
-  const nameInputRef              = useRef('');
+  const [copied, setCopied]         = useState(false);
+  const [minimized, setMinimized]   = useState(false);
+  const panelRef                    = useRef(null);
+
+  // Prevent Leaflet from receiving native DOM events fired inside the panel
+  useEffect(() => {
+    if (panelRef.current) {
+      L.DomEvent.disableClickPropagation(panelRef.current);
+    }
+  }, []);
 
   function handleMapClick(latlng) {
     setPoints(prev => [
@@ -72,11 +80,11 @@ export default function DevCoordinatePicker() {
     <>
       <MapClickHandler onMapClick={handleMapClick} />
 
-      <div style={styles.panel}>
+      <div ref={panelRef} style={styles.panel} role="dialog">
         {/* Header */}
         <div style={styles.header}>
           <span style={styles.headerTitle}>⚙ Dev — Coordinate Picker</span>
-          <button style={styles.minimizeBtn} onClick={() => setMinimized(m => !m)}>
+          <button type="button" style={styles.minimizeBtn} onClick={() => setMinimized(m => !m)}>
             {minimized ? '▼' : '▲'}
           </button>
         </div>
@@ -115,7 +123,7 @@ export default function DevCoordinatePicker() {
                     value={p.name}
                     onChange={e => updateName(p.id, e.target.value)}
                   />
-                  <button style={styles.removeBtn} onClick={() => removePoint(p.id)}>✕</button>
+                  <button type="button" style={styles.removeBtn} onClick={() => removePoint(p.id)}>✕</button>
                 </div>
               ))}
             </div>
@@ -123,6 +131,7 @@ export default function DevCoordinatePicker() {
             {/* Actions */}
             <div style={styles.actions}>
               <button
+                type="button"
                 style={{ ...styles.btn, ...(copied ? styles.btnSuccess : {}) }}
                 onClick={copyJson}
                 disabled={points.length === 0}
@@ -130,6 +139,7 @@ export default function DevCoordinatePicker() {
                 {copied ? '✓ Copied!' : 'Copy JSON'}
               </button>
               <button
+                type="button"
                 style={{ ...styles.btn, ...styles.btnDanger }}
                 onClick={() => setPoints([])}
                 disabled={points.length === 0}
