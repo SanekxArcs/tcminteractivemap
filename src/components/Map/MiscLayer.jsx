@@ -11,7 +11,12 @@ const MISC_CONFIG = {
   treasure:     { icon: 'treasure',    label: 'Treasure',           type: 'Treasure Location' },
 };
 
-export default function MiscLayer({ miscData, rivalsData, filters }) {
+export default function MiscLayer({
+  miscData,
+  rivalsData,
+  filters,
+  onMarkerClick,
+}) {
   const map = useMap();
   const groupsRef = useRef({});
 
@@ -22,11 +27,22 @@ export default function MiscLayer({ miscData, rivalsData, filters }) {
       Object.entries(MISC_CONFIG).forEach(([key, cfg]) => {
         const markers = miscData[key] || [];
         const group = L.featureGroup();
-        markers.forEach(m => {
-          L.marker([m.lat, m.lng], { icon: miscIcons[cfg.icon] })
-            .bindTooltip(m.name || cfg.label, { direction: 'top', offset: [0, -12], className: 'map-tooltip' })
-            .bindPopup(`<b>${m.name || cfg.label}</b><br><i>${cfg.type}</i>`, { className: 'hstPopup' })
+        markers.forEach((m) => {
+          const marker = L.marker([m.lat, m.lng], { icon: miscIcons[cfg.icon] })
+            .bindTooltip(m.name || cfg.label, {
+              direction: "top",
+              offset: [0, -12],
+              className: "map-tooltip",
+            })
             .addTo(group);
+
+          marker.on("click", () => {
+            onMarkerClick({
+              type: key === "treasure" ? "container" : "misc",
+              name: m.name || cfg.label,
+              subtitle: cfg.type,
+            });
+          });
         });
         groups[key] = group;
       });
@@ -35,12 +51,25 @@ export default function MiscLayer({ miscData, rivalsData, filters }) {
     if (rivalsData) {
       Object.entries(rivalsData).forEach(([key, markers]) => {
         const group = L.featureGroup();
-        markers.forEach(m => {
-          const label = m.name ? `${m.name} (${m.gang || key})` : (m.gang || key);
-          L.marker([m.lat, m.lng], { icon: miscIcons.achievement })
-            .bindTooltip(label, { direction: 'top', offset: [0, -12], className: 'map-tooltip' })
-            .bindPopup(`<b>${m.name || key}</b><br><i>Rival</i>`, { className: 'hstPopup' })
+        markers.forEach((m) => {
+          const label = m.name ? `${m.name} (${m.gang || key})` : m.gang || key;
+          const marker = L.marker([m.lat, m.lng], {
+            icon: miscIcons.achievement,
+          })
+            .bindTooltip(label, {
+              direction: "top",
+              offset: [0, -12],
+              className: "map-tooltip",
+            })
             .addTo(group);
+
+          marker.on("click", () => {
+            onMarkerClick({
+              type: "rival",
+              name: m.name || key,
+              subtitle: `Rival · ${m.gang || key}`,
+            });
+          });
         });
         groups[`rival_${key}`] = group;
       });
@@ -48,10 +77,10 @@ export default function MiscLayer({ miscData, rivalsData, filters }) {
 
     groupsRef.current = groups;
     return () => {
-      Object.values(groups).forEach(g => g.remove());
+      Object.values(groups).forEach((g) => g.remove());
       groupsRef.current = {};
     };
-  }, [miscData, rivalsData, map]);
+  }, [miscData, rivalsData, map, onMarkerClick]);
 
   useEffect(() => {
     const groups = groupsRef.current;
@@ -59,8 +88,8 @@ export default function MiscLayer({ miscData, rivalsData, filters }) {
 
     Object.entries(groups).forEach(([key, group]) => {
       let visible = false;
-      if (key.startsWith('rival_')) {
-        const rivalKey = key.replace('rival_', '');
+      if (key.startsWith("rival_")) {
+        const rivalKey = key.replace("rival_", "");
         visible = filters.rivals[rivalKey] ?? false;
       } else {
         visible = filters.misc[key] ?? false;

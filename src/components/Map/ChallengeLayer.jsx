@@ -3,13 +3,17 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { challengeIcons } from './icons';
 
-export default function ChallengeLayer({ challengesData, activeChallenge }) {
+export default function ChallengeLayer({
+  challengesData,
+  activeChallenge,
+  onMarkerClick,
+}) {
   const map = useMap();
   const groupRef = useRef(null);
 
   useEffect(() => {
     if (!groupRef.current) {
-      groupRef.current = L.featureGroup({ pane: 'challenges' }).addTo(map);
+      groupRef.current = L.featureGroup({ pane: "challenges" }).addTo(map);
     }
   }, [map]);
 
@@ -19,16 +23,29 @@ export default function ChallengeLayer({ challengesData, activeChallenge }) {
 
     group.clearLayers();
 
-    if (!activeChallenge || !challengesData || !challengesData[activeChallenge]) return;
+    if (!activeChallenge || !challengesData || !challengesData[activeChallenge])
+      return;
 
     const markers = challengesData[activeChallenge];
-    markers.forEach(m => {
+    markers.forEach((m) => {
       const icon = challengeIcons[m.icon] || challengeIcons.challenge;
-      L.marker([m.lat, m.lng], { icon, pane: 'challenges' })
-        .bindPopup(`<b>${m.name}</b>`, { className: 'hstPopup', pane: 'challenges-popup' })
+      const marker = L.marker([m.lat, m.lng], { icon, pane: "challenges" })
+        .bindTooltip(m.name, {
+          direction: "top",
+          offset: [0, -12],
+          className: "map-tooltip",
+        })
         .addTo(group);
+
+      marker.on("click", () => {
+        onMarkerClick({
+          type: "challenge",
+          name: m.name,
+          subtitle: `Challenge · ${activeChallenge.toUpperCase()}`,
+        });
+      });
     });
-  }, [activeChallenge, challengesData]);
+  }, [activeChallenge, challengesData, onMarkerClick]);
 
   return null;
 }

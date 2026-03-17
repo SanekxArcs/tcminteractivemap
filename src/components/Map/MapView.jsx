@@ -89,11 +89,13 @@ export default function MapView({
         miscData={miscData}
         rivalsData={rivalsData}
         filters={filters}
+        onMarkerClick={onMarkerClick}
       />
 
       <ChallengeLayer
         challengesData={challengesData}
         activeChallenge={activeChallenge}
+        onMarkerClick={onMarkerClick}
       />
 
       {IS_DEV_MODE && <DevCoordinatePicker />}

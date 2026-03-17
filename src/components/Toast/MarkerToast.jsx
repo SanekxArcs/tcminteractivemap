@@ -48,12 +48,20 @@ export default function MarkerToast({ data, onClose }) {
     <div
       style={{
         ...styles.toast,
-        transform: visible ? 'translateY(0)' : 'translateY(120%)',
+        transform: visible
+          ? "translateX(-50%) translateY(0)"
+          : "translateX(-50%) translateY(120%)",
         opacity: visible ? 1 : 0,
       }}
     >
       {/* Progress bar */}
-      <div style={{ ...styles.progressBar, width: `${progress}%`, background: color }} />
+      <div
+        style={{
+          ...styles.progressBar,
+          width: `${progress}%`,
+          background: color,
+        }}
+      />
 
       {/* Header */}
       <div style={styles.header}>
@@ -61,7 +69,14 @@ export default function MarkerToast({ data, onClose }) {
           {data.type?.toUpperCase()}
         </span>
         <span style={styles.title}>{data.name}</span>
-        <button style={styles.closeBtn} onClick={() => { setVisible(false); setTimeout(onClose, 300); }}>
+        <button
+          type="button"
+          style={styles.closeBtn}
+          onClick={() => {
+            setVisible(false);
+            setTimeout(onClose, 300);
+          }}
+        >
           ✕
         </button>
       </div>
@@ -86,7 +101,11 @@ export default function MarkerToast({ data, onClose }) {
         <div style={styles.rewards}>
           {data.xp && (
             <span style={styles.reward}>
-              <img src="/img/Misc/blue_xp.png" style={styles.rewardIcon} alt="" />
+              <img
+                src="/img/Misc/blue_xp.png"
+                style={styles.rewardIcon}
+                alt=""
+              />
               {data.xp}
             </span>
           )}
@@ -103,7 +122,9 @@ export default function MarkerToast({ data, onClose }) {
       {data.requirements && data.requirements.length > 0 && (
         <div style={styles.reqList}>
           {data.requirements.map((r, i) => (
-            <div key={i} style={styles.reqItem}>· {r}</div>
+            <div key={i} style={styles.reqItem}>
+              · {r}
+            </div>
           ))}
         </div>
       )}
