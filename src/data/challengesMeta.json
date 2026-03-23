@@ -1,6 +1,6 @@
 [
   {
-    "playlist": "Made in Japan",
+    "playlist": "Made in Japan Vol.1",
     "challenges": [
       {
         "key": "Nihon No Spirit",
@@ -25,6 +25,157 @@
         "label": "Nihon No Jaunt",
         "descriptionHtml": "Drive from the <b>OAHU AIRPORT</b> to the <b>MEMORIAL NATATORIUM</b> by <b>NIGHT</b>",
         "vehicle": "Toyota Supra Ryūjin Edition"
+      }
+    ]
+  },
+  {
+    "playlist": "Made in Japan Vol.2",
+    "challenges": [
+      {
+        "key": "Sekai No Tourist",
+        "label": "Sekai No Tourist",
+        "descriptionHtml": "Drive from <b>CAR MEET</b> to <b>KAHULUI</b> in less than <b>10min</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Liberty Walk Honda NSX"
+      },
+      {
+        "key": "Sekai No Cop",
+        "label": "Sekai No Cop",
+        "descriptionHtml": "Visit <b>CHASE SQUAD HQ</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Liberty Walk Honda NSX"
+      },
+      {
+        "key": "Sekai No Speedway",
+        "label": "Sekai No Speedway",
+        "descriptionHtml": "Reach a <b>300 km/h SPEED</b> on the <b>KAIWI ISLETS</b> roads in <b>FREEDRIVE</b>",
+        "vehicle": "Liberty Walk Honda NSX"
+      },
+      {
+        "key": "Sekai No Valley",
+        "label": "Sekai No Valley",
+        "descriptionHtml": "Visit <b>IAO LAKE</b> by <b>NIGHT</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Liberty Walk Honda NSX"
+      }
+    ]
+  },
+  {
+    "playlist": "Drift Experience Vol.1",
+    "challenges": [
+      {
+        "key": "Burning Turtle",
+        "label": "Burning Turtle",
+        "descriptionHtml": "Drive under the <b>TURTLE ROCK</b> in <b>FREEDRIVE</b> by <b>NIGHT</b>",
+        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
+      },
+      {
+        "key": "Burning Journey",
+        "label": "Burning Journey",
+        "descriptionHtml": "Drive from the <b>MOTORFEST GROUNDS</b> to the <b>TURTLE BAY RESORT</b> in less than <b>8min</b>",
+        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
+      },
+      {
+        "key": "Burning Donut",
+        "label": "Burning Donut",
+        "descriptionHtml": "Perform a <b>DONUT</b> on top of the <b>CONVENTION CENTER</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Nissan 370Z Nismo&#40Drift Edition&#41"
+      }
+    ]
+  },
+  {
+    "playlist": "Drift Experience Vol.2",
+    "challenges": [
+      {
+        "key": "Blazing Cruise",
+        "label": "Blazing Cruise",
+        "descriptionHtml": "Drive from <b>HALEIWA</b> to <b>HONOLULU</b> in less than <b>5min</b>",
+        "vehicle": "Mazda MX-5&#40Drift Edition&#41"
+      },
+      {
+        "key": "Blazing Night",
+        "label": "Blazing Night",
+        "descriptionHtml": "Drift for <b>5 km</b> with a <b>DRIFT CAR</b> in <b>HONOLULU</b> by <b>NIGHT</b>",
+        "vehicle": "Drift cars"
+      },
+      {
+        "key": "Blazing Park",
+        "label": "Blazing Park",
+        "descriptionHtml": "Drift for <b>30sec</b> on the top of the <b>MOANA CENTER PARKING LOT</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
+      }
+    ]
+  },
+  {
+    "playlist": "Off-Roading Addict Vol.1",
+    "challenges": [
+      {
+        "key": "Wild Peak",
+        "label": "Wild Peak",
+        "descriptionHtml": "Visit the <b>MAUNA PELE NUNUI CRATER</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
+      },
+      {
+        "key": "Wild Waves",
+        "label": "Wild Waves",
+        "descriptionHtml": "Visit the <b>KAENA POINT SATELLITE STATION</b> in <b>FREEDRIVE</b>",
+        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
+      },
+      {
+        "key": "Wild Run",
+        "label": "Wild Run",
+        "descriptionHtml": "Drive from the <b>MAUNA PELE SULPHUR BANKS</b> to the <b>MAUNA PELE NUNUI CRATER</b> in less than <b>3min</b>",
+        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
+      },
+      {
+        "key": "Wild Turtle",
+        "label": "Wild Turtle",
+        "descriptionHtml": "Drive from the <b>TURTLE BAY RESORT</b> to the <b>TURTLE ROCK</b> in less than <b>1min</b>",
+        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
+      },
+      {
+        "key": "Wild Lands",
+        "label": "Wild Lands",
+        "descriptionHtml": "Drive from the <b>STAIRWAY TO HEAVEN RADIO ANTENNA</b> to the <b>COCONUT RESORT</b> without using asphalt roads",
+        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
+      },
+      {
+        "key": "Wild Call",
+        "label": "Wild Call",
+        "descriptionHtml": "Visit the <b>STAIRWAY TO HEAVEN RADIO ANTENNA</b> in <b>FREEDRIVE</b>",
+        "vehicle": "KTM 525 XC"
+      },
+      {
+        "key": "Wild Sprint",
+        "label": "Wild Sprint",
+        "descriptionHtml": "Drive from the <b>KAENA POINT</b> to the <b>KAENA POINT SATELLITE STATION</b> in less than <b>1min</b>",
+        "vehicle": "Kawasaki KX450F"
+      }
+    ]
+  },
+  {
+    "playlist": "Off-Roading Addict Vol.2",
+    "challenges": [
+      {
+        "key": "Wilder Spin",
+        "label": "Wilder Spin",
+        "descriptionHtml": "Drive <b>OFFROAD</b> from the <b>TURTLE BAY BEACH</b> to <b>TURTLE ROCK</b>",
+        "vehicle": "Jeep Wrangler 392 Adventure Edition"
+      },
+      {
+        "key": "Wilder Explorer",
+        "label": "Wilder Explorer",
+        "descriptionHtml": "Visit <b>MAUNA PELE NUNUI CRATER</b> in <b>RAINY WEATHER</b>",
+        "vehicle": "Jeep Wrangler 392 Adventure Edition"
+      },
+      {
+        "key": "Wilder Speedster",
+        "label": "Wilder Speedster",
+        "descriptionHtml": "Drive from <b>MAUNA PELE NUNUI CRATER</b> to <b>HALEIWA</b> in less than <b>6min</b>",
+        "vehicle": "Jeep Wrangler 392 Adventure Edition"
+      },
+      {
+        "key": "Wilder Tracks",
+        "label": "Wilder Tracks",
+        "descriptionHtml": "Drive from <b>MAUNA PELE OBSERVATORY</b> to <b>AULINAII RESORT WITHOUT JUMPING</b>",
+        "vehicle": "Jeep Wrangler 392 Adventure Edition"
       }
     ]
   },
@@ -64,7 +215,7 @@
     ]
   },
   {
-    "playlist": "American Muscle",
+    "playlist": "American Muscle: AMustang Tribute",
     "challenges": [
       {
         "key": "American Vacation",
@@ -87,7 +238,7 @@
     ]
   },
   {
-    "playlist": "911 Legacy",
+    "playlist": "A Porsche Story: 911 Legacy",
     "challenges": [
       {
         "key": "911 Der Vogel",
@@ -122,7 +273,7 @@
     ]
   },
   {
-    "playlist": "Rule the Streets",
+    "playlist": "Rule the Streets by Donut Media",
     "challenges": [
       {
         "key": "Donut x Bean Giver",
@@ -198,53 +349,7 @@
       }
     ]
   },
-  {
-    "playlist": "Off-roading Addict",
-    "challenges": [
-      {
-        "key": "Wild Peak",
-        "label": "Wild Peak",
-        "descriptionHtml": "Visit the <b>MAUNA PELE NUNUI CRATER</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
-      },
-      {
-        "key": "Wild Waves",
-        "label": "Wild Waves",
-        "descriptionHtml": "Visit the <b>KAENA POINT SATELLITE STATION</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
-      },
-      {
-        "key": "Wild Run",
-        "label": "Wild Run",
-        "descriptionHtml": "Drive from the <b>MAUNA PELE SULPHUR BANKS</b> to the <b>MAUNA PELE NUNUI CRATER</b> in less than <b>3min</b>",
-        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
-      },
-      {
-        "key": "Wild Turtle",
-        "label": "Wild Turtle",
-        "descriptionHtml": "Drive from the <b>TURTLE BAY RESORT</b> to the <b>TURTLE ROCK</b> in less than <b>1min</b>",
-        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
-      },
-      {
-        "key": "Wild Lands",
-        "label": "Wild Lands",
-        "descriptionHtml": "Drive from the <b>STAIRWAY TO HEAVEN RADIO ANTENNA</b> to the <b>COCONUT RESORT</b> without using asphalt roads",
-        "vehicle": "Ivory-Tower IVT Falcon S-1000 Adventure Edition"
-      },
-      {
-        "key": "Wild Call",
-        "label": "Wild Call",
-        "descriptionHtml": "Visit the <b>STAIRWAY TO HEAVEN RADIO ANTENNA</b> in <b>FREEDRIVE</b>",
-        "vehicle": "KTM 525 XC"
-      },
-      {
-        "key": "Wild Sprint",
-        "label": "Wild Sprint",
-        "descriptionHtml": "Drive from the <b>KAENA POINT</b> to the <b>KAENA POINT SATELLITE STATION</b> in less than <b>1min</b>",
-        "vehicle": "Kawasaki KX450F"
-      }
-    ]
-  },
+
   {
     "playlist": "Vintage Garage",
     "challenges": [
@@ -320,7 +425,7 @@
     ]
   },
   {
-    "playlist": "Dream Cars",
+    "playlist": "Dream Cars by Supercar Blondie",
     "challenges": [
       {
         "key": "Super Racetrack",
@@ -390,7 +495,7 @@
     ]
   },
   {
-    "playlist": "Liberty Walk",
+    "playlist": "Liberty Walk: A signature",
     "challenges": [
       {
         "key": "Liberty Run",
@@ -406,29 +511,7 @@
       }
     ]
   },
-  {
-    "playlist": "Drift Experience",
-    "challenges": [
-      {
-        "key": "Burning Turtle",
-        "label": "Burning Turtle",
-        "descriptionHtml": "Drive under the <b>TURTLE ROCK</b> in <b>FREEDRIVE</b> by <b>NIGHT</b>",
-        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
-      },
-      {
-        "key": "Burning Journey",
-        "label": "Burning Journey",
-        "descriptionHtml": "Drive from the <b>MOTORFEST GROUNDS</b> to the <b>TURTLE BAY RESORT</b> in less than <b>8min</b>",
-        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
-      },
-      {
-        "key": "Burning Donut",
-        "label": "Burning Donut",
-        "descriptionHtml": "Perform a <b>DONUT</b> on top of the <b>CONVENTION CENTER</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Nissan 370Z Nismo&#40Drift Edition&#41"
-      }
-    ]
-  },
+
   {
     "playlist": "Ocean'N Sky",
     "challenges": [
@@ -523,29 +606,7 @@
       }
     ]
   },
-  {
-    "playlist": "Drift Experience Vol.2",
-    "challenges": [
-      {
-        "key": "Blazing Cruise",
-        "label": "Blazing Cruise",
-        "descriptionHtml": "Drive from <b>HALEIWA</b> to <b>HONOLULU</b> in less than <b>5min</b>",
-        "vehicle": "Mazda MX-5&#40Drift Edition&#41"
-      },
-      {
-        "key": "Blazing Night",
-        "label": "Blazing Night",
-        "descriptionHtml": "Drift for <b>5 km</b> with a <b>DRIFT CAR</b> in <b>HONOLULU</b> by <b>NIGHT</b>",
-        "vehicle": "Drift cars"
-      },
-      {
-        "key": "Blazing Park",
-        "label": "Blazing Park",
-        "descriptionHtml": "Drift for <b>30sec</b> on the top of the <b>MOANA CENTER PARKING LOT</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Toyota GR Supra&#40Drift Edition&#41"
-      }
-    ]
-  },
+
   {
     "playlist": "Hollywood Action!",
     "challenges": [
@@ -580,35 +641,7 @@
       }
     ]
   },
-  {
-    "playlist": "Off-roading Addict Vol.2",
-    "challenges": [
-      {
-        "key": "Wilder Spin",
-        "label": "Wilder Spin",
-        "descriptionHtml": "Drive <b>OFFROAD</b> from the <b>TURTLE BAY BEACH</b> to <b>TURTLE ROCK</b>",
-        "vehicle": "Jeep Wrangler 392 Adventure Edition"
-      },
-      {
-        "key": "Wilder Explorer",
-        "label": "Wilder Explorer",
-        "descriptionHtml": "Visit <b>MAUNA PELE NUNUI CRATER</b> in <b>RAINY WEATHER</b>",
-        "vehicle": "Jeep Wrangler 392 Adventure Edition"
-      },
-      {
-        "key": "Wilder Speedster",
-        "label": "Wilder Speedster",
-        "descriptionHtml": "Drive from <b>MAUNA PELE NUNUI CRATER</b> to <b>HALEIWA</b> in less than <b>6min</b>",
-        "vehicle": "Jeep Wrangler 392 Adventure Edition"
-      },
-      {
-        "key": "Wilder Tracks",
-        "label": "Wilder Tracks",
-        "descriptionHtml": "Drive from <b>MAUNA PELE OBSERVATORY</b> to <b>AULINAII RESORT WITHOUT JUMPING</b>",
-        "vehicle": "Jeep Wrangler 392 Adventure Edition"
-      }
-    ]
-  },
+
   {
     "playlist": "The Chase Squad",
     "challenges": [
@@ -623,35 +656,6 @@
         "label": "Code 10 - Maui Patrol",
         "descriptionHtml": "Drive from <b>HANA BEACH</b> to <b>LELE</b> in less than <b>10min</b> in <b>FREEDRIVE</b>",
         "vehicle": "Ivory-Tower Aezus Chase Squad Ed."
-      }
-    ]
-  },
-  {
-    "playlist": "Made in Japan Vol.2",
-    "challenges": [
-      {
-        "key": "Sekai No Tourist",
-        "label": "Sekai No Tourist",
-        "descriptionHtml": "Drive from <b>CAR MEET</b> to <b>KAHULUI</b> in less than <b>10min</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Liberty Walk Honda NSX"
-      },
-      {
-        "key": "Sekai No Cop",
-        "label": "Sekai No Cop",
-        "descriptionHtml": "Visit <b>CHASE SQUAD HQ</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Liberty Walk Honda NSX"
-      },
-      {
-        "key": "Sekai No Speedway",
-        "label": "Sekai No Speedway",
-        "descriptionHtml": "Reach a <b>300 km/h SPEED</b> on the <b>KAIWI ISLETS</b> roads in <b>FREEDRIVE</b>",
-        "vehicle": "Liberty Walk Honda NSX"
-      },
-      {
-        "key": "Sekai No Valley",
-        "label": "Sekai No Valley",
-        "descriptionHtml": "Visit <b>IAO LAKE</b> by <b>NIGHT</b> in <b>FREEDRIVE</b>",
-        "vehicle": "Liberty Walk Honda NSX"
       }
     ]
   },
