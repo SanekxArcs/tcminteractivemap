@@ -948,5 +948,34 @@
         "vehicle": "Ferrari F12berlinetta"
       }
     ]
+  },
+  {
+    "playlist": "Nascar Motorfert Tour",
+    "challenges": [
+      {
+        "key": "Nascar Kaho`olawe Tour",
+        "label": "Nascar Kaho`olawe Tour",
+        "descriptionHtml": "Starting from the <b>TUNNEL</b> coming from <b>OAHU</b>, drive all around <b>KAHO'OLAWE</b> in an <b>ANTI-CLOCKWISE</b> direction <b>WITHOUT TOUCHING OFF-ROAD</b> in <b>FREEDRIVE</b>. (P.s. start from tunnel and go right)",
+        "vehicle": "NASCAR - Next Gen Ford Mustang Dark Horse"
+      },
+      {
+        "key": "Nascar Stroll",
+        "label": "Nascar Stroll",
+        "descriptionHtml": "Drive from <b>HANAUMA RACETRACK</b> (Oahu) to the <b>PU'UKAHUA COASTER PARK</b> via the <b>RED BULL PLAYGROUND</b> (Maui) in <b>FREEDRIVE</b>.",
+        "vehicle": "Proto Henson Custom"
+      },
+      {
+        "key": "Nascar Caretaker",
+        "label": "Nascar Caretaker",
+        "descriptionHtml": "Drive from <b>HANAUMA RACETRACK</b> (Oahu) to the <b>RED BULL PLAYGROUND</b> (Maui) <b>WITHOUT COLLISIONS</b> in <b>FREEDRIVE</b>.",
+        "vehicle": "Proto Henson Custom"
+      },
+      {
+        "key": "Nascar Sprint",
+        "label": "Nascar Sprint",
+        "descriptionHtml": "Drive from the <b>RED BULL PLAYGROUND</b> (Maui) to the <b>KAHO'OLAWE SPEEDWAY</b> (Kaho) in less than <b>7min 30sec</b> in <b>FREEDRIVE</b>.",
+        "vehicle": "Proto Henson Custom"
+      }
+    ]
   }
 ]

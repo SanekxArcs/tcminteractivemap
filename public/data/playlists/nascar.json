@@ -1,0 +1,172 @@
+{
+  "id": "nascar",
+  "name": "Nascar Motorfert Tour",
+  "imgFolder": "Nascar",
+  "events": [
+    {
+      "lat": 473.601734,
+      "lng": 3916.05903,
+      "name": "The speedway"
+    },
+    {
+      "lat": 1324.212714,
+      "lng": 1741.762622,
+      "name": "Coach Roy Henson"
+    },
+    {
+      "lat": 1323.172158,
+      "lng": 1714.70816,
+      "name": "Brawl League"
+    },
+    {
+      "lat": 1233.194226,
+      "lng": 2691.601963,
+      "name": "Golden Ticket"
+    },
+    {
+      "lat": 824.25,
+      "lng": 3576,
+      "name": "Iowa Jim"
+    },
+    {
+      "lat": 489.358728,
+      "lng": 3905.356166,
+      "name": "Nascar Motorfest Tour"
+    },
+    {
+      "lat": 525.034941,
+      "lng": 3897.626319,
+      "name": "Semifinal"
+    },
+    {
+      "lat": 467.655698,
+      "lng": 3811.408804,
+      "name": "Show night"
+    },
+    {
+      "lat": 511.953663,
+      "lng": 3887.815361,
+      "name": "Big One at Kaho`olawe"
+    },
+    {
+      "lat": 476.27745,
+      "lng": 3791.489584,
+      "name": "Bonus Ride: Kaho Unleashed"
+    }
+  ],
+  "feats": [
+    {
+      "lat": 438.406204,
+      "lng": 3664.934447,
+      "name": "SLALOM"
+    },
+    {
+      "lat": 524.673232,
+      "lng": 3769.586251,
+      "name": "JUMP"
+    },
+    {
+      "lat": 516.541504,
+      "lng": 3774.535998,
+      "name": "ESCAPE"
+    },
+    {
+      "lat": 491.439213,
+      "lng": 3795.395648,
+      "name": "JUMP"
+    },
+    {
+      "lat": 478.357737,
+      "lng": 3869.288307,
+      "name": "SPEEDTRAP"
+    },
+    {
+      "lat": 476.943524,
+      "lng": 3919.846442,
+      "name": "SLALOM"
+    },
+    {
+      "lat": 511.238203,
+      "lng": 3894.037044,
+      "name": "BULLSEYE"
+    },
+    {
+      "lat": 1276.681293,
+      "lng": 1748.67507,
+      "name": "SPEEDTRAP"
+    },
+    {
+      "lat": 1414.920669,
+      "lng": 1645.083926,
+      "name": "ESCAPE"
+    },
+    {
+      "lat": 543.616302,
+      "lng": 3957.681279,
+      "name": "SPEEDTRAP"
+    }
+  ],
+  "photoOps": [
+    {
+      "lat": 487.815291,
+      "lng": 3873.707724,
+      "name": "Nascar Views - Pit",
+      "requirements": [
+        "Take a picture in front of the speedway's pit with a Cup car."
+      ]
+    },
+    {
+      "lat": 487.426266,
+      "lng": 3859.720343,
+      "name": "Nascar Views - Grandstands",
+      "requirements": [
+        "Take a picture of a Cup car in front of the speedway's grandstands at high speed."
+      ]
+    },
+    {
+      "lat": 456.060929,
+      "lng": 3738.569868,
+      "name": "Nascar Views - A'AMoana Tunnel",
+      "requirements": [
+        "Take a picture of a Cup car inside the A'A Moana tunnel located in Kaho'olawe."
+      ]
+    }
+  ],
+  "collectibles": [
+    {
+      "lat": 494.5,
+      "lng": 3838,
+      "name": "1"
+    },
+    {
+      "lat": 474.625,
+      "lng": 3908.875,
+      "name": "2"
+    },
+    {
+      "lat": 491.083507,
+      "lng": 3962.303909,
+      "name": "3"
+    },
+    {
+      "lat": 495.077764,
+      "lng": 3950.110911,
+      "name": "4"
+    },
+    {
+      "lat": 441.470618,
+      "lng": 3910.378555,
+      "name": "5"
+    },
+    {
+      "lat": 543.00886,
+      "lng": 3909.11721,
+      "name": "6"
+    }
+  ],
+  "container": {
+    "lat": 435.398455,
+    "lng": 3920.221255,
+    "name": "Nascar"
+  }
+}

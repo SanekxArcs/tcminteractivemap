@@ -7,8 +7,7 @@ export default function FilterSection({ title, items, checked, onToggle, onToggl
 
   return (
     <div className="sb-section">
-      <button
-        type="button"
+      <div
         className="sb-section-header"
         onClick={() => setCollapsed(c => !c)}
       >
@@ -24,7 +23,7 @@ export default function FilterSection({ title, items, checked, onToggle, onToggl
           </button>
         </span>
         <span className={`sb-section-chevron${collapsed ? '' : ' open'}`}>▼</span>
-      </button>
+      </div>
 
       {!collapsed && (
         <div className="sb-items">

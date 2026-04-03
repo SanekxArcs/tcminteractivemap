@@ -22,16 +22,17 @@ function buildSearchIndex(playlistData, miscData, rivalsData, challengesData, re
       items.push({ label: `${name} Container`, sub: name, lat: container.lat, lng: container.lng, type: 'container', zoom: 2 });
     }
     events.forEach(ev => {
-      items.push({ label: ev.name, sub: `${name} · ${ev.number || ''}`, lat: ev.lat, lng: ev.lng, type: 'event', zoom: 2 });
+      items.push({ label: ev.name || '', sub: `${name} · ${ev.number || ''}`, lat: ev.lat, lng: ev.lng, type: 'event', zoom: 2 });
     });
     feats.forEach(feat => {
-      items.push({ label: feat.location || feat.featType, sub: `${name} · ${feat.featType} Feat`, lat: feat.lat, lng: feat.lng, type: 'feat', zoom: 2 });
+      items.push({ label: feat.name || feat.location || feat.featType || '', sub: `${name} · ${feat.featType || 'Feat'}`, lat: feat.lat, lng: feat.lng, type: 'feat', zoom: 2 });
     });
     photoOps.forEach(photo => {
-      items.push({ label: photo.name, sub: `${name} · Photo Op`, lat: photo.lat, lng: photo.lng, type: 'photoOp', zoom: 2 });
+      items.push({ label: photo.name || '', sub: `${name} · Photo Op`, lat: photo.lat, lng: photo.lng, type: 'photoOp', zoom: 2 });
     });
     collectibles.forEach(col => {
-      items.push({ label: col.challenge, sub: `${name} · Collectible`, lat: col.lat, lng: col.lng, type: 'collectible', zoom: 2 });
+      const label = col.name || col.challenge || '';
+      items.push({ label, sub: `${name} · Collectible`, lat: col.lat, lng: col.lng, type: 'collectible', zoom: 2 });
     });
   });
 
@@ -83,9 +84,11 @@ export default function SearchBar({ playlistData, miscData, rivalsData, challeng
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
-    return index.filter(item =>
-      item.label.toLowerCase().includes(q) || item.sub.toLowerCase().includes(q)
-    ).slice(0, 12);
+    return index.filter(item => {
+      const label = item.label ? String(item.label).toLowerCase() : '';
+      const sub = item.sub ? String(item.sub).toLowerCase() : '';
+      return label.includes(q) || sub.includes(q);
+    }).slice(0, 12);
   }, [query, index]);
 
   function handleSelect(item) {

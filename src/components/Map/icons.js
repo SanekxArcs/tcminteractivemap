@@ -14,7 +14,7 @@ function makeDivIcon(html, className, size, anchor) {
 }
 
 export function getContainerIcon(imgFolder, id) {
-  return makeIcon(`/img/${imgFolder}/${id}_container.png`, [64, 75], [32, 75], [0, -60]);
+  return makeIcon(`/img/${imgFolder}/${id}_container.png`, [32, 38], [16, 38], [0, -30]);
 }
 
 export function getEventIcon(imgFolder, id) {
@@ -35,7 +35,7 @@ export const featIcons = {
 };
 
 export const miscIcons = {
-  mf_grounds:   makeIcon('/img/Misc/motorfest_grounds.png', [82, 75], [41, 75], [0, -60]),
+  mf_grounds:   makeIcon('/img/Misc/motorfest_grounds.png', [41, 38], [20.5, 38], [0, -30]),
   grand_race:   makeIcon('/img/Misc/grand_race.png',         [58, 50], [29, 50], [0, -35]),
   demo_royale:  makeIcon('/img/Misc/demo_royale.png',        [52, 50], [26, 50], [0, -35]),
   achievement:  makeIcon('/img/Misc/achievement.png',        [30, 40], [15, 40], [0, -30]),
