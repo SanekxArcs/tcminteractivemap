@@ -977,5 +977,20 @@
         "vehicle": "Proto Henson Custom"
       }
     ]
+  },
+  {
+    "playlist": "BMW",
+    "challenges": [
+      {
+        "key": "bavarian_marathon",
+        "label": "Bavarian Marathon",
+        "descriptionHtml": "Drive from HANAUMA RACETRACK [O'ahu) to MANAWAINUI GULCH (Maui) in less than 6min.",
+        "vehicle": "BMW M3.0 CSL"
+      }
+    ]
+  },
+  {
+    "playlist": "Street Riders",
+    "challenges": []
   }
 ]
