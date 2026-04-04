@@ -1749,5 +1749,48 @@
       "name": "Nascar Sprint Finish",
       "icon": "finish"
     }
+  ],
+
+  "Bavarian Marathon": [
+    {
+      "lat": 1305.5,
+      "lng": 3602,
+      "name": "Bawarian Marathon Start",
+      "icon": "start"
+    },
+    {
+      "lat": 330.450927,
+      "lng": 5698.531844,
+      "name": "Bawarian Marathon Finish",
+      "icon": "finish"
+    }
+  ],
+  "Bavarian Sprint": [
+    {
+      "lat": 1182.989645,
+      "lng": 5135.716552,
+      "name": "Bawarian Sprint Start",
+      "icon": "start"
+    },
+    {
+      "lat": 2020.016936,
+      "lng": 4828.478189,
+      "name": "Bawarian Sprint Finish",
+      "icon": "finish"
+    }
+  ],
+  "Bavarian Perfection": [
+    {
+      "lat": 449.012806,
+      "lng": 6036.570591,
+      "name": "Bawarian Perfection Start",
+      "icon": "start"
+    },
+    {
+      "lat": 681.966993,
+      "lng": 5454.895046,
+      "name": "Bawarian Perfection Finish",
+      "icon": "finish"
+    }
   ]
 }

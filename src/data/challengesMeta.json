@@ -982,9 +982,21 @@
     "playlist": "BMW",
     "challenges": [
       {
-        "key": "bavarian_marathon",
+        "key": "Bavarian Marathon",
         "label": "Bavarian Marathon",
-        "descriptionHtml": "Drive from HANAUMA RACETRACK [O'ahu) to MANAWAINUI GULCH (Maui) in less than 6min.",
+        "descriptionHtml": "Drive from <b>HANAUMA RACETRACK</b> (O'ahu) to <b>MANAWAINUI GULCH</b> (Maui) in less than <b>6min</b>.",
+        "vehicle": "BMW M3.0 CSL"
+      },
+      {
+        "key": "Bavarian Sprint",
+        "label": "Bavarian Sprint",
+        "descriptionHtml": "Drive from <b>Kealia Pond</b> to <b>Lipoa Point</b> in less than <b>3min</b>.",
+        "vehicle": "BMW M3.0 CSL"
+      },
+      {
+        "key": "Bavarian Perfection",
+        "label": "Bavarian Perfection",
+        "descriptionHtml": "Drive from <b>HANA VILLAGE</b> to the <b>RED BULL PLAYGROUND</b> (Maui) while driving on <b>ASPHALT WITHOUT COLLISION</b> in <b>FREEDRIVE</b>.",
         "vehicle": "BMW M3.0 CSL"
       }
     ]
