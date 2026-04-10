@@ -2,7 +2,10 @@
   "id": "de",
   "name": "Drift Experience",
   "imgFolder": "Drift",
-  "container": { "lat": 1613.32165, "lng": 2627.255819 },
+  "container": {
+    "lat": 1535.712338,
+    "lng": 1567.226327
+  },
   "events": [
     {
       "lat": 1349.55225,
@@ -263,18 +266,70 @@
     }
   ],
   "collectibles": [
-    { "lat": 1326.64219, "lng": 1598, "challenge": "Burning Rubber" },
-    { "lat": 1573.139132, "lng": 2403.125, "challenge": "Burning Rubber" },
-    { "lat": 1286.014976, "lng": 2825.375, "challenge": "Burning Rubber" },
-    { "lat": 1290.135898, "lng": 2808.875, "challenge": "Burning Rubber" },
-    { "lat": 1186.26821, "lng": 3173.375, "challenge": "Burning Rubber" },
-    { "lat": 1225.514659, "lng": 3340.75, "challenge": "Burning Rubber" },
-    { "lat": 1475.439996, "lng": 3338.6875, "challenge": "Burning Rubber" },
-    { "lat": 2910.618075, "lng": 2524.25, "challenge": "Burning Rubber" },
-    { "lat": 2970.625018, "lng": 2559.0625, "challenge": "Burning Rubber" },
-    { "lat": 3284.268585, "lng": 2287.225272, "challenge": "Burning Rubber" },
-    { "lat": 2828.274256, "lng": 2029.125, "challenge": "Burning Rubber" },
-    { "lat": 2942.041406, "lng": 1800.117088, "challenge": "Burning Rubber" },
-    { "lat": 1437.771115, "lng": 1597.402457, "challenge": "Burning Rubber" }
+    {
+      "lat": 1326.64219,
+      "lng": 1598,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1573.139132,
+      "lng": 2403.125,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1286.014976,
+      "lng": 2825.375,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1290.135898,
+      "lng": 2808.875,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1186.26821,
+      "lng": 3173.375,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1225.514659,
+      "lng": 3340.75,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1475.439996,
+      "lng": 3338.6875,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 2910.618075,
+      "lng": 2524.25,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 2970.625018,
+      "lng": 2559.0625,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 3284.268585,
+      "lng": 2287.225272,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 2828.274256,
+      "lng": 2029.125,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 2942.041406,
+      "lng": 1800.117088,
+      "challenge": "Burning Rubber"
+    },
+    {
+      "lat": 1437.771115,
+      "lng": 1597.402457,
+      "challenge": "Burning Rubber"
+    }
   ]
 }

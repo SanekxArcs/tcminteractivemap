@@ -8,17 +8,19 @@ import MiscLayer from "./MiscLayer";
 import ChallengeLayer from "./ChallengeLayer";
 import RegionLayer from "./RegionLayer";
 import DevCoordinatePicker from "../Dev/DevCoordinatePicker";
+import DevCalibrationLayer from "../Dev/DevCalibrationLayer";
 import { PLAYLISTS } from "../../data/playlistConfig";
 
-const IS_DEV_MODE = new URLSearchParams(window.location.search).has("dev");
+const IS_DEV_MODE         = new URLSearchParams(window.location.search).has("dev");
+const IS_CALIBRATION_MODE = new URLSearchParams(window.location.search).has("calibration");
 
 const BOUNDS = [
   [0, 0],
-  [3579, 6707],
+  [3246, 4209],
 ];
 const EXPANDED_BOUNDS = [
-  [-3000, -4000],
-  [6579, 10707],
+  [-2000, -2000],
+  [5246, 6209],
 ];
 
 function MapSetup() {
@@ -72,33 +74,44 @@ export default function MapView({
       <MapSetup />
       <MapController onMapReady={onMapReady} />
       <ZoomControl position="bottomright" />
-      <ImageOverlay url="/img/oahu_maui.webp" bounds={BOUNDS} />
+      <ImageOverlay url="/img/oahu_maui-new.webp" bounds={BOUNDS} />
 
-      <RegionLayer regions={regionsData} />
-
-      {PLAYLISTS.map((p) => (
-        <PlaylistLayer
-          key={p.id}
-          data={playlistData[p.id] || null}
-          filters={filters}
-          onMarkerClick={onMarkerClick}
+      {IS_CALIBRATION_MODE ? (
+        <DevCalibrationLayer
+          playlistData={playlistData}
+          miscData={miscData}
+          rivalsData={rivalsData}
+          challengesData={challengesData}
         />
-      ))}
+      ) : (
+        <>
+          <RegionLayer regions={regionsData} />
 
-      <MiscLayer
-        miscData={miscData}
-        rivalsData={rivalsData}
-        filters={filters}
-        onMarkerClick={onMarkerClick}
-      />
+          {PLAYLISTS.map((p) => (
+            <PlaylistLayer
+              key={p.id}
+              data={playlistData[p.id] || null}
+              filters={filters}
+              onMarkerClick={onMarkerClick}
+            />
+          ))}
 
-      <ChallengeLayer
-        challengesData={challengesData}
-        activeChallenge={activeChallenge}
-        onMarkerClick={onMarkerClick}
-      />
+          <MiscLayer
+            miscData={miscData}
+            rivalsData={rivalsData}
+            filters={filters}
+            onMarkerClick={onMarkerClick}
+          />
 
-      {IS_DEV_MODE && <DevCoordinatePicker />}
+          <ChallengeLayer
+            challengesData={challengesData}
+            activeChallenge={activeChallenge}
+            onMarkerClick={onMarkerClick}
+          />
+
+          {IS_DEV_MODE && <DevCoordinatePicker />}
+        </>
+      )}
     </MapContainer>
   );
 }

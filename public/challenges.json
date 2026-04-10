@@ -6,7 +6,6 @@
       "name": "Made in Japan Container",
       "icon": "start"
     },
-
     {
       "lat": 1995.776591,
       "lng": 2952.75,
@@ -14,7 +13,6 @@
       "icon": "finish"
     }
   ],
-
   "Nihon No Kohai": [
     {
       "lat": 1395.642623,
@@ -23,7 +21,6 @@
       "icon": "challenge"
     }
   ],
-
   "Nihon No Style": [
     {
       "lat": 1995.776591,
@@ -31,7 +28,6 @@
       "name": "Japanese Temple",
       "icon": "start"
     },
-
     {
       "lat": 1301.57298,
       "lng": 2898.5,
@@ -39,7 +35,6 @@
       "icon": "finish"
     }
   ],
-
   "Nihon No Jaunt": [
     {
       "lat": 1328.008977,
@@ -47,7 +42,6 @@
       "name": "Oahu Airport",
       "icon": "start"
     },
-
     {
       "lat": 1134.524045,
       "lng": 2989.5,
@@ -55,7 +49,6 @@
       "icon": "finish"
     }
   ],
-
   "Rainbow Flash": [
     {
       "lat": 1355.554348,
@@ -64,7 +57,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Peak": [
     {
       "lat": 1776.192422,
@@ -73,7 +65,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Stroll": [
     {
       "lat": 2261.257453,
@@ -81,7 +72,6 @@
       "name": "Makua Caves",
       "icon": "start"
     },
-
     {
       "lat": 1328.008977,
       "lng": 2404.870163,
@@ -89,7 +79,6 @@
       "icon": "finish"
     }
   ],
-
   "Rainbow Spiral": [
     {
       "lat": 1449.411736,
@@ -98,7 +87,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Lava": [
     {
       "lat": 2169.021374,
@@ -107,7 +95,6 @@
       "icon": "challenge"
     }
   ],
-
   "American Vacation": [
     {
       "lat": 1353.769194,
@@ -116,7 +103,6 @@
       "icon": "challenge"
     }
   ],
-
   "American Cruiser": [
     {
       "lat": 2786.657712,
@@ -124,7 +110,6 @@
       "name": "Ma'akua Black Beach",
       "icon": "start"
     },
-
     {
       "lat": 1283.245745,
       "lng": 1804.006176,
@@ -132,7 +117,6 @@
       "icon": "finish"
     }
   ],
-
   "American Spin": [
     {
       "lat": 2392.233759,
@@ -140,7 +124,6 @@
       "name": "Wahiawa",
       "icon": "start"
     },
-
     {
       "lat": 1424.292396,
       "lng": 2244.5,
@@ -148,7 +131,6 @@
       "icon": "finish"
     }
   ],
-
   "911 Der Vogel": [
     {
       "lat": 1279.516452,
@@ -157,7 +139,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Royal": [
     {
       "lat": 1289.678755,
@@ -166,7 +147,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Leisure": [
     {
       "lat": 1430.761597,
@@ -175,7 +155,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Cruising": [
     {
       "lat": 2013.927929,
@@ -183,7 +162,6 @@
       "name": "Kaneohe Golf Course",
       "icon": "start"
     },
-
     {
       "lat": 1650.789949,
       "lng": 3651.852971,
@@ -191,7 +169,6 @@
       "icon": "finish"
     }
   ],
-
   "911 Uphill": [
     {
       "lat": 1430.761597,
@@ -199,7 +176,6 @@
       "name": "Aulinaii Resort",
       "icon": "start"
     },
-
     {
       "lat": 1901.608322,
       "lng": 1559.86285,
@@ -207,7 +183,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Bean Giver": [
     {
       "lat": 1301.57298,
@@ -216,7 +191,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Gig Lover": [
     {
       "lat": 1429.147674,
@@ -225,7 +199,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Window Shopper": [
     {
       "lat": 1326.662861,
@@ -234,7 +207,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Tribute": [
     {
       "lat": 1522.406182,
@@ -243,7 +215,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x C-8 Explosion": [
     {
       "lat": 1179.088096,
@@ -251,7 +222,6 @@
       "name": "Diamond Head",
       "icon": "start"
     },
-
     {
       "lat": 1328.008977,
       "lng": 2404.870163,
@@ -259,7 +229,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Tomorrowland": [
     {
       "lat": 1405.025416,
@@ -267,7 +236,6 @@
       "name": "Rule the Streets Container",
       "icon": "start"
     },
-
     {
       "lat": 2349.010687,
       "lng": 2251.125,
@@ -275,7 +243,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Notorious": [
     {
       "lat": 1282.564262,
@@ -284,7 +251,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Chevy Rampage": [
     {
       "lat": 1301.57298,
@@ -293,7 +259,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Flying Dino": [
     {
       "lat": 1279.516452,
@@ -302,7 +267,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Hi Speed": [
     {
       "lat": 1315.20854,
@@ -311,7 +275,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x King Of Hawaii": [
     {
       "lat": 1286.38755,
@@ -320,7 +283,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Over The Top": [
     {
       "lat": 1399.36702,
@@ -329,7 +291,6 @@
       "icon": "challenge"
     }
   ],
-
   "Wild Peak": [
     {
       "lat": 2169.021374,
@@ -338,16 +299,14 @@
       "icon": "challenge"
     }
   ],
-
   "Wild Waves": [
     {
-      "lat": 2707.377847,
-      "lng": 1119.9375,
+      "lat": 2274.655909,
+      "lng": 690.186079,
       "name": "Kaena Point Satellite Station",
       "icon": "challenge"
     }
   ],
-
   "Wild Run": [
     {
       "lat": 2053.615775,
@@ -355,7 +314,6 @@
       "name": "Mauna Pele Sulphur Banks",
       "icon": "start"
     },
-
     {
       "lat": 2169.021374,
       "lng": 1388.25,
@@ -363,7 +321,6 @@
       "icon": "finish"
     }
   ],
-
   "Wild Turtle": [
     {
       "lat": 3286.578781,
@@ -371,7 +328,6 @@
       "name": "Turtle Bay Resort",
       "icon": "start"
     },
-
     {
       "lat": 3062.615211,
       "lng": 2038.412073,
@@ -379,7 +335,6 @@
       "icon": "finish"
     }
   ],
-
   "Wild Lands": [
     {
       "lat": 1776.192422,
@@ -387,7 +342,6 @@
       "name": "Stairway to Heaven radio antenna",
       "icon": "start"
     },
-
     {
       "lat": 1650.789949,
       "lng": 3651.852971,
@@ -395,7 +349,6 @@
       "icon": "finish"
     }
   ],
-
   "Wild Call": [
     {
       "lat": 1776.192422,
@@ -404,23 +357,20 @@
       "icon": "challenge"
     }
   ],
-
   "Wild Sprint": [
     {
-      "lat": 2721.55368,
-      "lng": 993.625,
+      "lat": 2293.965421,
+      "lng": 605.445419,
       "name": "Kaena Point",
       "icon": "start"
     },
-
     {
-      "lat": 2707.377847,
-      "lng": 1119.9375,
+      "lat": 2274.358607,
+      "lng": 690.186079,
       "name": "Kaena Point Satellite Station",
       "icon": "finish"
     }
   ],
-
   "Retro Rainbow": [
     {
       "lat": 2912.623067,
@@ -429,7 +379,6 @@
       "icon": "challenge"
     }
   ],
-
   "Retro Driving": [
     {
       "lat": 2360.955007,
@@ -437,7 +386,6 @@
       "name": "Wahiawa Pineapple Tower",
       "icon": "start"
     },
-
     {
       "lat": 2845.880431,
       "lng": 1737.1875,
@@ -445,7 +393,6 @@
       "icon": "finish"
     }
   ],
-
   "Retro Beach Party": [
     {
       "lat": 2031.268456,
@@ -453,7 +400,6 @@
       "name": "Mokapu surf shop",
       "icon": "start"
     },
-
     {
       "lat": 2436.993672,
       "lng": 2988.375,
@@ -461,7 +407,6 @@
       "icon": "finish"
     }
   ],
-
   "A.L. Rivals": [
     {
       "lat": 1144.408662,
@@ -469,7 +414,6 @@
       "name": "Automobili Lamborghini Container",
       "icon": "start"
     },
-
     {
       "lat": 1437.003357,
       "lng": 2245.25,
@@ -477,15 +421,13 @@
       "icon": "finish"
     }
   ],
-
   "Alpha Sprint": [
     {
-      "lat": 2721.55368,
-      "lng": 993.625,
+      "lat": 2292.283628,
+      "lng": 606.286315,
       "name": "Kaena Point",
       "icon": "start"
     },
-
     {
       "lat": 1430.761597,
       "lng": 1578.969442,
@@ -493,7 +435,6 @@
       "icon": "finish"
     }
   ],
-
   "Alpha Endurance": [
     {
       "lat": 1164.556668,
@@ -502,7 +443,6 @@
       "icon": "challenge"
     }
   ],
-
   "E-Spin": [
     {
       "lat": 3286.578781,
@@ -510,7 +450,6 @@
       "name": "Turtle Bay Resort",
       "icon": "start"
     },
-
     {
       "lat": 1430.761597,
       "lng": 1578.969442,
@@ -518,7 +457,6 @@
       "icon": "finish"
     }
   ],
-
   "Clean E-nergy": [
     {
       "lat": 2975.113225,
@@ -526,7 +464,6 @@
       "name": "Waimea wind turbines",
       "icon": "start"
     },
-
     {
       "lat": 1751.518312,
       "lng": 2283.424573,
@@ -534,7 +471,6 @@
       "icon": "finish"
     }
   ],
-
   "E-ruption": [
     {
       "lat": 2169.021374,
@@ -543,7 +479,6 @@
       "icon": "challenge"
     }
   ],
-
   "Super Racetrack": [
     {
       "lat": 1164.556668,
@@ -552,7 +487,6 @@
       "icon": "challenge"
     }
   ],
-
   "Super Touristy": [
     {
       "lat": 3286.578781,
@@ -561,7 +495,6 @@
       "icon": "challenge"
     }
   ],
-
   "Super Day Off": [
     {
       "lat": 1430.761597,
@@ -570,7 +503,6 @@
       "icon": "challenge"
     }
   ],
-
   "Super Ride": [
     {
       "lat": 1289.678755,
@@ -578,7 +510,6 @@
       "name": "Royal Luau",
       "icon": "start"
     },
-
     {
       "lat": 2020.011812,
       "lng": 3103,
@@ -586,7 +517,6 @@
       "icon": "finish"
     }
   ],
-
   "Rider Stroll": [
     {
       "lat": 2392.233759,
@@ -594,7 +524,6 @@
       "name": "Wahiawa",
       "icon": "start"
     },
-
     {
       "lat": 2870.16293,
       "lng": 1976.717007,
@@ -602,7 +531,6 @@
       "icon": "finish"
     }
   ],
-
   "Rider Tourism": [
     {
       "lat": 2870.16293,
@@ -610,7 +538,6 @@
       "name": "Haleiwa",
       "icon": "start"
     },
-
     {
       "lat": 2020.011812,
       "lng": 3103,
@@ -618,7 +545,6 @@
       "icon": "finish"
     }
   ],
-
   "Rider Sightseing": [
     {
       "lat": 2020.011812,
@@ -626,7 +552,6 @@
       "name": "Kaneohe",
       "icon": "start"
     },
-
     {
       "lat": 1301.57298,
       "lng": 2898.5,
@@ -634,7 +559,6 @@
       "icon": "finish"
     }
   ],
-
   "Rider Cruise": [
     {
       "lat": 1301.57298,
@@ -642,7 +566,6 @@
       "name": "Honolulu",
       "icon": "start"
     },
-
     {
       "lat": 2392.233759,
       "lng": 2213.25,
@@ -650,7 +573,6 @@
       "icon": "finish"
     }
   ],
-
   "Alpha Rider": [
     {
       "lat": 1226.086338,
@@ -659,7 +581,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rider Club": [
     {
       "lat": 1901.608322,
@@ -668,7 +589,6 @@
       "icon": "challenge"
     }
   ],
-
   "Liberty Run": [
     {
       "lat": 1310.009351,
@@ -676,7 +596,6 @@
       "name": "Waikiki Parking Lot",
       "icon": "start"
     },
-
     {
       "lat": 1283.245745,
       "lng": 1804.006176,
@@ -684,7 +603,6 @@
       "icon": "finish"
     }
   ],
-
   "Liberty Journey": [
     {
       "lat": 2392.233759,
@@ -692,7 +610,6 @@
       "name": "Wahiawa",
       "icon": "start"
     },
-
     {
       "lat": 2870.16293,
       "lng": 1976.717007,
@@ -700,7 +617,6 @@
       "icon": "finish"
     }
   ],
-
   "Burning Turtle": [
     {
       "lat": 3062.615211,
@@ -709,7 +625,6 @@
       "icon": "challenge"
     }
   ],
-
   "Burning Journey": [
     {
       "lat": 1475.144686,
@@ -717,7 +632,6 @@
       "name": "Motorfest Grounds",
       "icon": "start"
     },
-
     {
       "lat": 3286.578781,
       "lng": 2287.048495,
@@ -725,7 +639,6 @@
       "icon": "finish"
     }
   ],
-
   "Burning Donut": [
     {
       "lat": 1394.020706,
@@ -734,7 +647,6 @@
       "icon": "challenge"
     }
   ],
-
   "ONS Eruption": [
     {
       "lat": 2169.021374,
@@ -743,7 +655,6 @@
       "icon": "challenge"
     }
   ],
-
   "ONS Fast Flight": [
     {
       "lat": 1424.292396,
@@ -751,7 +662,6 @@
       "name": "Ford Island",
       "icon": "start"
     },
-
     {
       "lat": 3286.578781,
       "lng": 2287.048495,
@@ -759,7 +669,6 @@
       "icon": "finish"
     }
   ],
-
   "ONS Cruiser": [
     {
       "lat": 2164.834655,
@@ -767,7 +676,6 @@
       "name": "Kaneohe Harbor",
       "icon": "start"
     },
-
     {
       "lat": 1227.562223,
       "lng": 1792.25,
@@ -775,7 +683,6 @@
       "icon": "finish"
     }
   ],
-
   "ONS Wayfarer": [
     {
       "lat": 2937.183819,
@@ -784,7 +691,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Trick": [
     {
       "lat": 1162.529585,
@@ -793,7 +699,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Astra": [
     {
       "lat": 1282.564262,
@@ -802,7 +707,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Skill": [
     {
       "lat": 1162.529585,
@@ -811,7 +715,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana 360": [
     {
       "lat": 1901.608322,
@@ -820,7 +723,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Tire Slayer": [
     {
       "lat": 1301.57298,
@@ -829,7 +731,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Demolition": [
     {
       "lat": 1162.529585,
@@ -838,7 +739,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Jaunt": [
     {
       "lat": 1328.008977,
@@ -846,7 +746,6 @@
       "name": "Oahu Airport",
       "icon": "start"
     },
-
     {
       "lat": 1162.529585,
       "lng": 1590.636704,
@@ -854,7 +753,6 @@
       "icon": "finish"
     }
   ],
-
   "Gymkhana Speed": [
     {
       "lat": 1162.529585,
@@ -863,7 +761,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Airlines": [
     {
       "lat": 1162.529585,
@@ -872,7 +769,6 @@
       "icon": "challenge"
     }
   ],
-
   "Gymkhana Addict": [
     {
       "lat": 1162.529585,
@@ -881,7 +777,6 @@
       "icon": "challenge"
     }
   ],
-
   "Blazing Cruise": [
     {
       "lat": 2870.16293,
@@ -889,7 +784,6 @@
       "name": "Haleiwa",
       "icon": "start"
     },
-
     {
       "lat": 1301.57298,
       "lng": 2898.5,
@@ -897,7 +791,6 @@
       "icon": "finish"
     }
   ],
-
   "Blazing Night": [
     {
       "lat": 1301.57298,
@@ -906,7 +799,6 @@
       "icon": "challenge"
     }
   ],
-
   "Blazing Park": [
     {
       "lat": 1325.390854,
@@ -915,7 +807,6 @@
       "icon": "challenge"
     }
   ],
-
   "Night Out Movie Award": [
     {
       "lat": 1650.789949,
@@ -924,7 +815,6 @@
       "icon": "challenge"
     }
   ],
-
   "Time Saver Movie Award": [
     {
       "lat": 2020.011812,
@@ -932,7 +822,6 @@
       "name": "Kaneohe",
       "icon": "start"
     },
-
     {
       "lat": 1298.787755,
       "lng": 2860,
@@ -940,7 +829,6 @@
       "icon": "finish"
     }
   ],
-
   "Dirty South N Da Place": [
     {
       "lat": 2889.003832,
@@ -949,7 +837,6 @@
       "icon": "challenge"
     }
   ],
-
   "West Side N Da Hood": [
     {
       "lat": 2378.830921,
@@ -958,7 +845,6 @@
       "icon": "challenge"
     }
   ],
-
   "Wilder Spin": [
     {
       "lat": 3296.506328,
@@ -966,7 +852,6 @@
       "name": "Turtle Bay Beach",
       "icon": "start"
     },
-
     {
       "lat": 3062.615211,
       "lng": 2038.412073,
@@ -974,7 +859,6 @@
       "icon": "finish"
     }
   ],
-
   "Wilder Explorer": [
     {
       "lat": 2169.021374,
@@ -983,7 +867,6 @@
       "icon": "challenge"
     }
   ],
-
   "Wilder Speedster": [
     {
       "lat": 2169.021374,
@@ -991,7 +874,6 @@
       "name": "Mauna Pele Nunui Crater",
       "icon": "start"
     },
-
     {
       "lat": 2870.16293,
       "lng": 1976.717007,
@@ -999,7 +881,6 @@
       "icon": "finish"
     }
   ],
-
   "Wilder Tracks": [
     {
       "lat": 1901.608322,
@@ -1007,7 +888,6 @@
       "name": "Mauna Pele Observatory",
       "icon": "start"
     },
-
     {
       "lat": 1430.761597,
       "lng": 1578.969442,
@@ -1015,7 +895,6 @@
       "icon": "finish"
     }
   ],
-
   "Code 10 - Cop Island": [
     {
       "lat": 1400.43992,
@@ -1023,7 +902,6 @@
       "name": "Chase Squad Container",
       "icon": "start"
     },
-
     {
       "lat": 430.995702,
       "lng": 6059.374785,
@@ -1031,7 +909,6 @@
       "icon": "finish"
     }
   ],
-
   "Code 10 - Maui Patrol": [
     {
       "lat": 430.995702,
@@ -1039,7 +916,6 @@
       "name": "Hana Beach",
       "icon": "start"
     },
-
     {
       "lat": 1445.996777,
       "lng": 4656.298154,
@@ -1047,7 +923,6 @@
       "icon": "finish"
     }
   ],
-
   "Sekai No Tourist": [
     {
       "lat": 1438.522499,
@@ -1055,7 +930,6 @@
       "name": "Car Meet",
       "icon": "start"
     },
-
     {
       "lat": 1679.581831,
       "lng": 5369.06179,
@@ -1063,7 +937,6 @@
       "icon": "finish"
     }
   ],
-
   "Sekai No Cop": [
     {
       "lat": 1360.911701,
@@ -1072,7 +945,6 @@
       "icon": "challenge"
     }
   ],
-
   "Sekai No Speedway": [
     {
       "lat": 932.195597,
@@ -1081,7 +953,6 @@
       "icon": "challenge"
     }
   ],
-
   "Sekai No Valley": [
     {
       "lat": 1600.284264,
@@ -1090,7 +961,6 @@
       "icon": "challenge"
     }
   ],
-
   "Valley Isle Fast Tourism": [
     {
       "lat": 1328.008977,
@@ -1098,7 +968,6 @@
       "name": "Oahu Airport",
       "icon": "start"
     },
-
     {
       "lat": 1456.752461,
       "lng": 5389.25,
@@ -1106,7 +975,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Star Watcher": [
     {
       "lat": 1679.581831,
@@ -1114,7 +982,6 @@
       "name": "Kahului",
       "icon": "start"
     },
-
     {
       "lat": 739.026295,
       "lng": 5284,
@@ -1122,7 +989,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Monster Trip": [
     {
       "lat": 739.026295,
@@ -1130,7 +996,6 @@
       "name": "Haleakala Observatory",
       "icon": "start"
     },
-
     {
       "lat": 567.906393,
       "lng": 5002.625,
@@ -1138,7 +1003,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Maze": [
     {
       "lat": 567.906393,
@@ -1146,7 +1010,6 @@
       "name": "Wailea",
       "icon": "start"
     },
-
     {
       "lat": 1881.863487,
       "lng": 4724.625,
@@ -1154,7 +1017,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Jaunt": [
     {
       "lat": 1881.863487,
@@ -1162,7 +1024,6 @@
       "name": "Kapalua Labyrinth",
       "icon": "start"
     },
-
     {
       "lat": 1256.362811,
       "lng": 5374.718644,
@@ -1170,7 +1031,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Stroll": [
     {
       "lat": 1256.362811,
@@ -1178,7 +1038,6 @@
       "name": "Kula Fields",
       "icon": "start"
     },
-
     {
       "lat": 859.170683,
       "lng": 6110.640026,
@@ -1186,7 +1045,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Ascension": [
     {
       "lat": 859.170683,
@@ -1194,7 +1052,6 @@
       "name": "Ke'anae Point",
       "icon": "start"
     },
-
     {
       "lat": 698.726399,
       "lng": 5457.803691,
@@ -1202,7 +1059,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Descent": [
     {
       "lat": 698.726399,
@@ -1210,7 +1066,6 @@
       "name": "Red Hill Haleakala",
       "icon": "start"
     },
-
     {
       "lat": 273.860946,
       "lng": 5644.75,
@@ -1218,7 +1073,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Wayfarer": [
     {
       "lat": 273.860946,
@@ -1226,7 +1080,6 @@
       "name": "Mokulau Beach",
       "icon": "start"
     },
-
     {
       "lat": 1445.996777,
       "lng": 4656.298154,
@@ -1234,7 +1087,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Sailor": [
     {
       "lat": 1626.306879,
@@ -1242,7 +1094,6 @@
       "name": "Kahului Beach",
       "icon": "start"
     },
-
     {
       "lat": 1581.564543,
       "lng": 4610.5,
@@ -1250,7 +1101,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Black Rock Beach": [
     {
       "lat": 1581.564543,
@@ -1258,7 +1108,6 @@
       "name": "Black Rock Beach",
       "icon": "start"
     },
-
     {
       "lat": 939.549553,
       "lng": 4303.805424,
@@ -1266,7 +1115,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Pailolo Islets": [
     {
       "lat": 939.549553,
@@ -1274,7 +1122,6 @@
       "name": "Pailolo Islets",
       "icon": "start"
     },
-
     {
       "lat": 266.124937,
       "lng": 5656.75,
@@ -1282,7 +1129,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Mokulau Beach": [
     {
       "lat": 266.124937,
@@ -1290,7 +1136,6 @@
       "name": "Mokulau Beach",
       "icon": "start"
     },
-
     {
       "lat": 1080.219556,
       "lng": 6019.953582,
@@ -1298,7 +1143,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Peahi Beach": [
     {
       "lat": 1080.219556,
@@ -1306,7 +1150,6 @@
       "name": "Peahi Beach",
       "icon": "start"
     },
-
     {
       "lat": 1626.306879,
       "lng": 5437.25,
@@ -1314,7 +1157,6 @@
       "icon": "finish"
     }
   ],
-
   "Valley Isle Bamboos": [
     {
       "lat": 939.092244,
@@ -1323,7 +1165,6 @@
       "icon": "challenge"
     }
   ],
-
   "Valley Isle West Falls": [
     {
       "lat": 1675.792958,
@@ -1332,7 +1173,6 @@
       "icon": "challenge"
     }
   ],
-
   "Valley Isle East Falls": [
     {
       "lat": 527.404951,
@@ -1341,7 +1181,6 @@
       "icon": "challenge"
     }
   ],
-
   "Apex Lightspeed": [
     {
       "lat": 685.595009,
@@ -1350,7 +1189,6 @@
       "icon": "challenge"
     }
   ],
-
   "Apex Paradise": [
     {
       "lat": 685.595009,
@@ -1359,7 +1197,6 @@
       "icon": "challenge"
     }
   ],
-
   "Apex Tourism": [
     {
       "lat": 777.38639,
@@ -1367,7 +1204,6 @@
       "name": "Pu'unianiau",
       "icon": "start"
     },
-
     {
       "lat": 760.505589,
       "lng": 5427.5,
@@ -1375,7 +1211,6 @@
       "icon": "finish"
     }
   ],
-
   "Apex Vertigo": [
     {
       "lat": 1276.759703,
@@ -1384,7 +1219,6 @@
       "icon": "challenge"
     }
   ],
-
   "Apex Fast Trip": [
     {
       "lat": 447.97412,
@@ -1392,14 +1226,12 @@
       "name": "Hana",
       "icon": "start"
     },
-
     {
       "lat": 567.906393,
       "lng": 5002.625,
       "name": "Wailea",
       "icon": "challenge"
     },
-
     {
       "lat": 1445.996777,
       "lng": 4656.298154,
@@ -1407,7 +1239,6 @@
       "icon": "finish"
     }
   ],
-
   "Apex Explorer": [
     {
       "lat": 1439.002426,
@@ -1415,7 +1246,6 @@
       "name": "Car Meet Big Wheel",
       "icon": "start"
     },
-
     {
       "lat": 739.026295,
       "lng": 5284,
@@ -1423,7 +1253,6 @@
       "icon": "finish"
     }
   ],
-
   "Apex Cruising": [
     {
       "lat": 2966.445652,
@@ -1431,7 +1260,6 @@
       "name": "Haleiwa Island",
       "icon": "start"
     },
-
     {
       "lat": 859.170683,
       "lng": 6110.640026,
@@ -1439,7 +1267,6 @@
       "icon": "finish"
     }
   ],
-
   "Bold Shot": [
     {
       "lat": 686.972633,
@@ -1448,7 +1275,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Rush": [
     {
       "lat": 760.505589,
@@ -1456,7 +1282,6 @@
       "name": "Red Bull Playground Smoky Tent",
       "icon": "start"
     },
-
     {
       "lat": 1051.401762,
       "lng": 4862.066227,
@@ -1464,7 +1289,6 @@
       "icon": "finish"
     }
   ],
-
   "Bold and Dirty": [
     {
       "lat": 739.026295,
@@ -1472,7 +1296,6 @@
       "name": "Haleakala Observatory",
       "icon": "start"
     },
-
     {
       "lat": 177.151893,
       "lng": 5691.75,
@@ -1480,7 +1303,6 @@
       "icon": "finish"
     }
   ],
-
   "Bold Tourism": [
     {
       "lat": 1017.530387,
@@ -1489,7 +1311,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Surfin'": [
     {
       "lat": 1601.239329,
@@ -1498,7 +1319,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Search": [
     {
       "lat": 1257.336102,
@@ -1507,7 +1327,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Stunts": [
     {
       "lat": 686.011214,
@@ -1516,7 +1335,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Expedition": [
     {
       "lat": 1953.620676,
@@ -1525,7 +1343,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Move": [
     {
       "lat": 1645.806619,
@@ -1534,7 +1351,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Loop": [
     {
       "lat": 1449.411736,
@@ -1543,7 +1359,6 @@
       "icon": "challenge"
     }
   ],
-
   "Bold Spin": [
     {
       "lat": 1658.275969,
@@ -1551,7 +1366,6 @@
       "name": "Kaohikaipu Island",
       "icon": "start"
     },
-
     {
       "lat": 2560.980314,
       "lng": 3175.5,
@@ -1559,7 +1373,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Essenza": [
     {
       "lat": 1164.556668,
@@ -1568,7 +1381,6 @@
       "icon": "challenge"
     }
   ],
-
   "Velocita Supercar": [
     {
       "lat": 913.643708,
@@ -1577,7 +1389,6 @@
       "icon": "challenge"
     }
   ],
-
   "Supercar Exhibition": [
     {
       "lat": 559.332749,
@@ -1586,7 +1397,6 @@
       "icon": "challenge"
     }
   ],
-
   "Strada di Supercar": [
     {
       "lat": 559.332749,
@@ -1595,7 +1405,6 @@
       "icon": "challenge"
     }
   ],
-
   "Supercar Ride": [
     {
       "lat": 1438.522499,
@@ -1603,7 +1412,6 @@
       "name": "Car Meet",
       "icon": "start"
     },
-
     {
       "lat": 559.332749,
       "lng": 5073.314378,
@@ -1611,7 +1419,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Cruising": [
     {
       "lat": 2969.15044,
@@ -1619,7 +1426,6 @@
       "name": "Laie",
       "icon": "start"
     },
-
     {
       "lat": 2020.011812,
       "lng": 3103,
@@ -1627,7 +1433,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Journey": [
     {
       "lat": 447.97412,
@@ -1635,7 +1440,6 @@
       "name": "Hana",
       "icon": "start"
     },
-
     {
       "lat": 1284.791904,
       "lng": 5643.5,
@@ -1643,7 +1447,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Pace": [
     {
       "lat": 2020.011812,
@@ -1651,7 +1454,6 @@
       "name": "Kaneohe",
       "icon": "start"
     },
-
     {
       "lat": 447.97412,
       "lng": 6035.863484,
@@ -1659,7 +1461,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Quick Stroll": [
     {
       "lat": 1661.80877,
@@ -1667,7 +1468,6 @@
       "name": "Black Rock",
       "icon": "start"
     },
-
     {
       "lat": 1560.496065,
       "lng": 5309.840414,
@@ -1675,7 +1475,6 @@
       "icon": "finish"
     }
   ],
-
   "Supercar Dolce Vita": [
     {
       "lat": 2941.041568,
@@ -1684,7 +1483,6 @@
       "icon": "challenge"
     }
   ],
-
   "Nascar Kaho`olawe Tour": [
     {
       "lat": 527.501659,
@@ -1699,7 +1497,6 @@
       "icon": "finish"
     }
   ],
-
   "Nascar Stroll": [
     {
       "lat": 1305.5,
@@ -1720,7 +1517,6 @@
       "icon": "finish"
     }
   ],
-
   "Nascar Caretaker": [
     {
       "lat": 1305.912133,
@@ -1735,7 +1531,6 @@
       "icon": "finish"
     }
   ],
-
   "Nascar Sprint": [
     {
       "lat": 682.807889,
@@ -1750,7 +1545,6 @@
       "icon": "finish"
     }
   ],
-
   "Bavarian Marathon": [
     {
       "lat": 1305.5,

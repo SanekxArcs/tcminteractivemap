@@ -2,7 +2,10 @@
   "id": "de2",
   "name": "Drift Experience Vol.2",
   "imgFolder": "Drift2",
-  "container": { "lat": 2810.380379, "lng": 1631.125 },
+  "container": {
+    "lat": 2323.607019,
+    "lng": 996.252028
+  },
   "events": [
     {
       "lat": 3046.326482,
@@ -239,10 +242,30 @@
     }
   ],
   "collectibles": [
-    { "lat": 1306.19766, "lng": 2787.125, "challenge": "Blazing Rubber" },
-    { "lat": 1461.072692, "lng": 2768.323048, "challenge": "Blazing Rubber" },
-    { "lat": 1407.503761, "lng": 2554.9375, "challenge": "Blazing Rubber" },
-    { "lat": 1374.208373, "lng": 2424.315599, "challenge": "Blazing Rubber" },
-    { "lat": 1223.139554, "lng": 2920.25, "challenge": "Blazing Rubber" }
+    {
+      "lat": 1306.19766,
+      "lng": 2787.125,
+      "challenge": "Blazing Rubber"
+    },
+    {
+      "lat": 1461.072692,
+      "lng": 2768.323048,
+      "challenge": "Blazing Rubber"
+    },
+    {
+      "lat": 1407.503761,
+      "lng": 2554.9375,
+      "challenge": "Blazing Rubber"
+    },
+    {
+      "lat": 1374.208373,
+      "lng": 2424.315599,
+      "challenge": "Blazing Rubber"
+    },
+    {
+      "lat": 1223.139554,
+      "lng": 2920.25,
+      "challenge": "Blazing Rubber"
+    }
   ]
 }

@@ -2,7 +2,10 @@
   "id": "am",
   "name": "American Muscle",
   "imgFolder": "AM",
-  "container": { "lat": 1562.268069, "lng": 2303 },
+  "container": {
+    "lat": 1523.75,
+    "lng": 1369
+  },
   "events": [
     {
       "lat": 2442.904726,
@@ -242,16 +245,60 @@
     }
   ],
   "collectibles": [
-    { "lat": 1567.011337, "lng": 2303.0625, "challenge": "American Stars" },
-    { "lat": 1403.998602, "lng": 2167.282284, "challenge": "American Stars" },
-    { "lat": 1264.26494, "lng": 2360.5, "challenge": "American Stars" },
-    { "lat": 1340.318722, "lng": 1801.125, "challenge": "American Stars" },
-    { "lat": 1681.320304, "lng": 2649.125, "challenge": "American Stars" },
-    { "lat": 2823.853284, "lng": 1548.387074, "challenge": "American Stars" },
-    { "lat": 1976.871239, "lng": 3223.0625, "challenge": "American Stars" },
-    { "lat": 2910.630238, "lng": 2528.8125, "challenge": "American Stars" },
-    { "lat": 2727.568388, "lng": 2152, "challenge": "American Stars" },
-    { "lat": 2308.515468, "lng": 2083.1875, "challenge": "American Stars" },
-    { "lat": 1112.919048, "lng": 3239.375, "challenge": "American Stars" }
+    {
+      "lat": 1567.011337,
+      "lng": 2303.0625,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1403.998602,
+      "lng": 2167.282284,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1264.26494,
+      "lng": 2360.5,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1340.318722,
+      "lng": 1801.125,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1681.320304,
+      "lng": 2649.125,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 2823.853284,
+      "lng": 1548.387074,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1976.871239,
+      "lng": 3223.0625,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 2910.630238,
+      "lng": 2528.8125,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 2727.568388,
+      "lng": 2152,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 2308.515468,
+      "lng": 2083.1875,
+      "challenge": "American Stars"
+    },
+    {
+      "lat": 1112.919048,
+      "lng": 3239.375,
+      "challenge": "American Stars"
+    }
   ]
 }
