@@ -1,0 +1,50 @@
+{
+    "id": "rcfrenzy",
+    "name": "RC Frenzy",
+    "imgFolder": "RCFrenzy",
+    "container": {
+        "lat": 499.394164,
+        "lng": 3821.116657
+    },
+    "events": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "name": "",
+            "number": "1/0",
+            "type": "",
+            "weather": "",
+            "car": "",
+            "category": "",
+            "xp": "",
+            "bucks": ""
+        }
+    ],
+    "feats": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "type": "",
+            "location": "",
+            "featType": "",
+            "objective": "",
+            "xp": "",
+            "bucks": ""
+        }
+    ],
+    "photoOps": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "name": "",
+            "requirements": []
+        }
+    ],
+    "collectibles": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "challenge": ""
+        }
+    ]
+}

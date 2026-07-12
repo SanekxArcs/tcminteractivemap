@@ -1,0 +1,50 @@
+{
+    "id": "latenightshow",
+    "name": "Late Night Show",
+    "imgFolder": "LateNightShow",
+    "container": {
+        "lat": 2016.13821,
+        "lng": 4846.156325
+    },
+    "events": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "name": "",
+            "number": "1/0",
+            "type": "",
+            "weather": "",
+            "car": "",
+            "category": "",
+            "xp": "",
+            "bucks": ""
+        }
+    ],
+    "feats": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "type": "",
+            "location": "",
+            "featType": "",
+            "objective": "",
+            "xp": "",
+            "bucks": ""
+        }
+    ],
+    "photoOps": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "name": "",
+            "requirements": []
+        }
+    ],
+    "collectibles": [
+        {
+            "lat": 0,
+            "lng": 0,
+            "challenge": ""
+        }
+    ]
+}
