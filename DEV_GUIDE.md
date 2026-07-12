@@ -176,6 +176,20 @@ See **[DEV_MODE_GUIDE.md](./DEV_MODE_GUIDE.md)** for the full walkthrough — or
 
 ---
 
+## Editing existing data (Dev Tool)
+
+Open the map with `?dev-edit` in the URL:
+
+```
+http://localhost:5173/?dev-edit
+```
+
+This enables a **Dev Edit** panel for editing points that are already in the data — pick a playlist/category (or misc group, rival gang, challenge, or region), edit fields, drag pins to reposition them, then **Copy JSON** / **Save JSON** to get the full updated file back out.
+
+See the **"Editing existing data"** section of **[DEV_MODE_GUIDE.md](./DEV_MODE_GUIDE.md)** for the full walkthrough.
+
+---
+
 ## File map
 
 | What to change | File |

@@ -74,3 +74,42 @@ Fields:
 - Zoom in before placing points — precision matters, and the base map image is large.
 - Pins are colored by type (same colors used for search-result badges), so a busy cluster stays readable.
 - Toggle sidebar layers on/off while in dev mode to see existing markers for context before adding new ones nearby.
+
+---
+
+## Editing existing data — `?dev-edit`
+
+Add `?dev-edit` to the URL to edit points that are **already** in the data files (as opposed to `?dev`, which only adds new ones):
+
+```
+http://localhost:5173/?dev-edit
+```
+
+This mounts the **Dev Edit** panel in the top-right corner (both modes can be active together via `?dev&dev-edit` — the edit panel shifts left to make room).
+
+### Choosing what to edit
+
+Pick a **Source** first, then a sub-selector:
+
+- **Playlist** → pick the playlist, then a **Category**: Container (single point), Events, Feats, Photo Ops, or Collectibles.
+- **Misc** → pick a group (`mf_grounds`, `demo_royale`, `grand_race`, `achievements`, `treasure`).
+- **Rivals** → pick a gang group.
+- **Challenges** → pick a challenge by name.
+- **Regions** → no sub-selector, just the one flat list.
+
+The panel shows exactly which file the data comes from (e.g. `→ public/data/playlists/mij.json`) — that's the file you'll replace once you're done.
+
+### Editing
+
+- Every point in the selected category shows up as a numbered, colored, **draggable** pin on the map and as a row in the list. Drag a pin to move it; the row's lat/lng inputs update to match (and you can also type exact numbers directly into those inputs).
+- Click a row's name button to expand it and edit every field the point has (name, xp, requirements, whatever that type stores) — array-type fields (like Photo Op requirements) use a textarea, one line per entry.
+- **+ field** on an expanded row adds a new custom key/value pair; **✕** next to a field removes it, **✕** on the row removes the whole point.
+- **+ Add new** appends a fresh point at the current map center, copying the field shape (keys, blanked out) of the first point already in the list.
+- **Reset** discards all local edits and reloads straight from the fetched data.
+
+### Saving
+
+- **Copy JSON** / **Save JSON** produce the **entire target file**, not just the edited category — untouched parts of the file (other categories, top-level `id`/`name`/`imgFolder`, etc.) are preserved as-is.
+- Replace the real file in `public/` with what you copied/downloaded, then refresh the page (without `?dev-edit`) to see it live.
+- Edits made in this panel are **not** persisted anywhere until you save — switching Source/Category or reloading the page discards them.
+- Tip: toggle off the corresponding sidebar layer while editing so the real markers don't visually clutter the draggable edit-pins for the same points.

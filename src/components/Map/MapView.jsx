@@ -8,9 +8,11 @@ import MiscLayer from "./MiscLayer";
 import ChallengeLayer from "./ChallengeLayer";
 import RegionLayer from "./RegionLayer";
 import DevCoordinatePicker from "../Dev/DevCoordinatePicker";
+import DevEditPanel from "../Dev/DevEditPanel";
 import { PLAYLISTS } from "../../data/playlistConfig";
 
 const IS_DEV_MODE = new URLSearchParams(window.location.search).has("dev");
+const IS_DEV_EDIT_MODE = new URLSearchParams(window.location.search).has("dev-edit");
 
 const BOUNDS = [
   [0, 0],
@@ -102,6 +104,16 @@ export default function MapView({
       />
 
       {IS_DEV_MODE && <DevCoordinatePicker />}
+      {IS_DEV_EDIT_MODE && (
+        <DevEditPanel
+          playlistData={playlistData}
+          miscData={miscData}
+          rivalsData={rivalsData}
+          challengesData={challengesData}
+          regionsData={regionsData}
+          offsetRight={IS_DEV_MODE ? 384 : 0}
+        />
+      )}
     </MapContainer>
   );
 }
