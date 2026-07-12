@@ -69,7 +69,7 @@ export default function MapView({
         height: "100%",
         width: "100%",
         position: "absolute",
-        background: "rgb(70,70,70)",
+        background: "#C9DCD8",
       }}
     >
       <MapSetup />
