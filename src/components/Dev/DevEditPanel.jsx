@@ -41,6 +41,9 @@ function pinColor(source, category) {
 function toItem(raw, idx) {
   const { lat, lng, ...rest } = raw;
   const fields = Object.entries(rest).map(([key, value]) => {
+    if (key === 'checkpoints' && Array.isArray(value)) {
+      return { key, kind: 'checkpoints', value: value.map(cp => ({ lat: cp.lat, lng: cp.lng })) };
+    }
     if (Array.isArray(value)) return { key, kind: 'array', value: value.join('\n') };
     if (typeof value === 'boolean') return { key, kind: 'boolean', value };
     if (typeof value === 'number') return { key, kind: 'number', value: String(value) };
@@ -53,7 +56,9 @@ function toRaw(item) {
   const obj = { lat: item.lat, lng: item.lng };
   item.fields.forEach(f => {
     if (!f.key) return;
-    if (f.kind === 'array') {
+    if (f.kind === 'checkpoints') {
+      if (f.value.length > 0) obj[f.key] = f.value.map(cp => ({ lat: cp.lat, lng: cp.lng }));
+    } else if (f.kind === 'array') {
       obj[f.key] = f.value.split('\n').map(s => s.trim()).filter(Boolean);
     } else if (f.kind === 'boolean') {
       obj[f.key] = !!f.value;
@@ -76,6 +81,7 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
   const map = useMap();
   const panelRef    = useRef(null);
   const pinGroupRef = useRef(null);
+  const checkpointGroupRef = useRef(null);
 
   const [source, setSource]           = useState('playlist');
   const [playlistId, setPlaylistId]   = useState(PLAYLISTS[0].id);
@@ -156,6 +162,81 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items, source, category]);
 
+  // Draggable pins for expanded events' checkpoints (smaller, separate group).
+  useEffect(() => {
+    checkpointGroupRef.current = L.featureGroup().addTo(map);
+    return () => { checkpointGroupRef.current.remove(); checkpointGroupRef.current = null; };
+  }, [map]);
+
+  useEffect(() => {
+    const group = checkpointGroupRef.current;
+    if (!group) return;
+    group.clearLayers();
+
+    if (!(source === 'playlist' && category === 'events')) return;
+
+    items.forEach(item => {
+      if (!item.expanded) return;
+      const fieldIdx = item.fields.findIndex(f => f.kind === 'checkpoints');
+      if (fieldIdx === -1) return;
+      const checkpoints = item.fields[fieldIdx].value;
+
+      checkpoints.forEach((cp, cpIdx) => {
+        const label = cpIdx === 0 ? 'S' : cpIdx === checkpoints.length - 1 ? 'F' : String(cpIdx);
+        const icon = L.divIcon({
+          className: 'dev-pin',
+          html: `<div class="dev-pin-dot dev-pin-checkpoint" style="background:${pinColor(source, category)}">${label}</div>`,
+          iconSize: [16, 16],
+          iconAnchor: [8, 8],
+        });
+        const marker = L.marker([cp.lat, cp.lng], { icon, draggable: true }).addTo(group);
+        marker.on('dragend', () => {
+          const ll = marker.getLatLng();
+          updateCheckpoint(item.id, cpIdx, parseFloat(ll.lat.toFixed(6)), parseFloat(ll.lng.toFixed(6)));
+        });
+      });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items, source, category]);
+
+  function addCheckpoint(itemId) {
+    const center = map.getCenter();
+    const lat = parseFloat(center.lat.toFixed(6));
+    const lng = parseFloat(center.lng.toFixed(6));
+    setItems(prev => prev.map(p => {
+      if (p.id !== itemId) return p;
+      const idx = p.fields.findIndex(f => f.kind === 'checkpoints');
+      if (idx === -1) {
+        return { ...p, fields: [...p.fields, { key: 'checkpoints', kind: 'checkpoints', value: [{ lat, lng }] }] };
+      }
+      return { ...p, fields: p.fields.map((f, i) => i !== idx ? f : { ...f, value: [...f.value, { lat, lng }] }) };
+    }));
+  }
+
+  function removeCheckpoint(itemId, cpIdx) {
+    setItems(prev => prev.map(p => {
+      if (p.id !== itemId) return p;
+      const idx = p.fields.findIndex(f => f.kind === 'checkpoints');
+      if (idx === -1) return p;
+      return { ...p, fields: p.fields.map((f, i) => i !== idx ? f : { ...f, value: f.value.filter((_, j) => j !== cpIdx) }) };
+    }));
+  }
+
+  function updateCheckpoint(itemId, cpIdx, lat, lng) {
+    setItems(prev => prev.map(p => {
+      if (p.id !== itemId) return p;
+      const idx = p.fields.findIndex(f => f.kind === 'checkpoints');
+      if (idx === -1) return p;
+      return {
+        ...p,
+        fields: p.fields.map((f, i) => i !== idx ? f : {
+          ...f,
+          value: f.value.map((cp, j) => j === cpIdx ? { lat, lng } : cp),
+        }),
+      };
+    }));
+  }
+
   function updateLatLng(id, key, value) {
     const n = parseFloat(value);
     if (Number.isNaN(n)) return;
@@ -203,7 +284,7 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
     const center = map.getCenter();
     const template = (items[0]?.fields || []).map(f => ({
       ...f,
-      value: f.kind === 'boolean' ? false : '',
+      value: f.kind === 'boolean' ? false : f.kind === 'checkpoints' ? [] : '',
     }));
     setItems(prev => [...prev, {
       id: `new-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
@@ -273,6 +354,22 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
 
   return (
     <>
+      {!minimized && (
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          style={styles.centerReticle}
+          aria-hidden="true"
+        >
+          <circle cx="14" cy="14" r="6" fill="none" stroke="#ff3b30" strokeWidth="2" />
+          <line x1="14" y1="0" x2="14" y2="8" stroke="#ff3b30" strokeWidth="2" />
+          <line x1="14" y1="20" x2="14" y2="28" stroke="#ff3b30" strokeWidth="2" />
+          <line x1="0" y1="14" x2="8" y2="14" stroke="#ff3b30" strokeWidth="2" />
+          <line x1="20" y1="14" x2="28" y2="14" stroke="#ff3b30" strokeWidth="2" />
+        </svg>
+      )}
+
       <div ref={panelRef} style={{ ...styles.panel, right: `${12 + offsetRight}px` }} role="dialog">
         <div style={styles.header}>
           <span style={styles.headerTitle}>✎ Dev — Edit Existing Data</span>
@@ -370,40 +467,72 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
                   {item.expanded && (
                     <div style={styles.fieldsBlock}>
                       {item.fields.map((f, idx) => (
-                        <div key={`${f.key || 'field'}-${idx}`} style={styles.fieldRow}>
-                          {f.custom ? (
-                            <input
-                              style={{ ...styles.fieldInput, ...styles.fieldKeyInput }}
-                              placeholder="key…"
-                              value={f.key}
-                              onChange={e => updateFieldKey(item.id, idx, e.target.value)}
-                            />
-                          ) : (
-                            <span style={styles.fieldLabel}>{f.key}</span>
-                          )}
+                        f.kind === 'checkpoints' ? null : (
+                          <div key={`${f.key || 'field'}-${idx}`} style={styles.fieldRow}>
+                            {f.custom ? (
+                              <input
+                                style={{ ...styles.fieldInput, ...styles.fieldKeyInput }}
+                                placeholder="key…"
+                                value={f.key}
+                                onChange={e => updateFieldKey(item.id, idx, e.target.value)}
+                              />
+                            ) : (
+                              <span style={styles.fieldLabel}>{f.key}</span>
+                            )}
 
-                          {f.kind === 'array' ? (
-                            <textarea
-                              style={{ ...styles.fieldInput, ...styles.fieldTextarea }}
-                              value={f.value}
-                              onChange={e => updateFieldValue(item.id, idx, e.target.value)}
-                            />
-                          ) : f.kind === 'boolean' ? (
-                            <input
-                              type="checkbox"
-                              checked={!!f.value}
-                              onChange={e => updateFieldValue(item.id, idx, e.target.checked)}
-                            />
-                          ) : (
-                            <input
-                              style={styles.fieldInput}
-                              value={f.value}
-                              onChange={e => updateFieldValue(item.id, idx, e.target.value)}
-                            />
-                          )}
-                          <button type="button" style={styles.removeBtn} onClick={() => removeField(item.id, idx)}>✕</button>
-                        </div>
+                            {f.kind === 'array' ? (
+                              <textarea
+                                style={{ ...styles.fieldInput, ...styles.fieldTextarea }}
+                                value={f.value}
+                                onChange={e => updateFieldValue(item.id, idx, e.target.value)}
+                              />
+                            ) : f.kind === 'boolean' ? (
+                              <input
+                                type="checkbox"
+                                checked={!!f.value}
+                                onChange={e => updateFieldValue(item.id, idx, e.target.checked)}
+                              />
+                            ) : (
+                              <input
+                                style={styles.fieldInput}
+                                value={f.value}
+                                onChange={e => updateFieldValue(item.id, idx, e.target.value)}
+                              />
+                            )}
+                            <button type="button" style={styles.removeBtn} onClick={() => removeField(item.id, idx)}>✕</button>
+                          </div>
+                        )
                       ))}
+
+                      {source === 'playlist' && category === 'events' && (() => {
+                        const checkpoints = item.fields.find(f => f.kind === 'checkpoints')?.value || [];
+                        return (
+                          <div style={styles.checkpointsBlock}>
+                            <div style={styles.checkpointsHeader}>
+                              <span style={styles.fieldLabel}>checkpoints ({checkpoints.length})</span>
+                              <button type="button" style={styles.smallBtn} onClick={() => addCheckpoint(item.id)}>
+                                + add at map center
+                              </button>
+                            </div>
+                            {checkpoints.map((cp, cpIdx) => (
+                              <div key={cpIdx} style={styles.checkpointRow}>
+                                <span style={styles.checkpointIndex}>
+                                  {cpIdx === 0 ? 'S' : cpIdx === checkpoints.length - 1 ? 'F' : cpIdx}
+                                </span>
+                                <span style={styles.pointCoords}>{cp.lat}, {cp.lng}</span>
+                                <button
+                                  type="button"
+                                  style={styles.removeBtn}
+                                  onClick={() => removeCheckpoint(item.id, cpIdx)}
+                                >
+                                  ✕
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      })()}
+
                       <button type="button" style={styles.addFieldBtn} onClick={() => addField(item.id)}>+ field</button>
                     </div>
                   )}
@@ -431,9 +560,6 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
                 </button>
               </div>
             </div>
-
-            {/* Preview */}
-            {items.length > 0 && <pre style={styles.preview}>{buildJsonText()}</pre>}
           </>
         )}
       </div>
@@ -444,6 +570,16 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
 }
 
 const styles = {
+  centerReticle: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000,
+    pointerEvents: 'none',
+    opacity: 0.85,
+    filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.9))',
+  },
   panel: {
     position: 'fixed',
     top: '12px',
@@ -610,6 +746,47 @@ const styles = {
     alignItems: 'center',
     gap: '6px',
   },
+  checkpointsBlock: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4px',
+    padding: '4px 0',
+    borderTop: '1px solid #262626',
+    borderBottom: '1px solid #262626',
+  },
+  checkpointsHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '6px',
+  },
+  checkpointRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '6px',
+  },
+  checkpointIndex: {
+    minWidth: '14px',
+    textAlign: 'right',
+    fontSize: '10px',
+    fontWeight: 'bold',
+    color: '#888',
+  },
+  pointCoords: {
+    color: '#aad4ff',
+    flex: '0 0 auto',
+    fontSize: '11px',
+  },
+  smallBtn: {
+    background: '#1a1a1a',
+    border: '1px solid #333',
+    color: '#5b9bd9',
+    borderRadius: '3px',
+    padding: '2px 6px',
+    fontSize: '10px',
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+  },
   fieldLabel: {
     color: '#777',
     fontSize: '10px',
@@ -673,17 +850,5 @@ const styles = {
     background: '#1a4a1a',
     borderColor: '#2a8a2a',
     color: '#6fdd6f',
-  },
-  preview: {
-    background: '#0a0a0a',
-    borderTop: '1px solid #222',
-    margin: 0,
-    padding: '8px 10px',
-    fontSize: '10px',
-    color: '#888',
-    overflowX: 'auto',
-    maxHeight: '140px',
-    overflowY: 'auto',
-    flexShrink: 0,
   },
 };

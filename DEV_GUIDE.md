@@ -34,7 +34,12 @@ Use the in-map coordinate picker (see bottom of this doc) to get exact coordinat
       "car": "Some Car",
       "category": "Street Tier 2",
       "xp": "8,400",
-      "bucks": "15,750"
+      "bucks": "15,750",
+      "checkpoints": [
+        { "lat": 1234.5, "lng": 5678.9 },
+        { "lat": 1245.0, "lng": 5690.0 },
+        { "lat": 1260.0, "lng": 5705.0 }
+      ]
     }
   ],
   "feats": [
@@ -68,6 +73,8 @@ Use the in-map coordinate picker (see bottom of this doc) to get exact coordinat
 ```
 
 **Feat types:** `escape` | `slalom` | `speedtrap` | `drift`
+
+**Event checkpoints (optional):** if an event has a `checkpoints` array (2+ points, first = start, last = finish), clicking that event's marker also draws the full track on the map as a dashed line with a pin at each point, and the info toast stays open (no auto-close) until you dismiss it. Events without `checkpoints` behave as before — just the info toast, auto-closing after a few seconds. Both dev tools (`?dev` and `?dev-edit`) can add/drag/remove checkpoints without hand-editing JSON — see **[DEV_MODE_GUIDE.md](./DEV_MODE_GUIDE.md)**.
 
 **Step 2 — Add icons**
 
@@ -202,6 +209,8 @@ See the **"Editing existing data"** section of **[DEV_MODE_GUIDE.md](./DEV_MODE_
 | Rival markers | `public/data/rivals.json` |
 | Marker icons logic | `src/components/Map/icons.js` |
 | Popup HTML templates | `src/components/Map/PlaylistLayer.jsx` |
+| Event checkpoint track rendering | `src/components/Map/TrackLayer.jsx` |
+| Toast auto-close / track-open behavior | `src/components/Toast/MarkerToast.jsx` |
 | Sidebar layout | `src/components/Sidebar/Sidebar.jsx` |
 | Filter state logic | `src/hooks/useFilters.js` |
 | Countdown date | `src/components/Sidebar/CountdownTimer.jsx` |

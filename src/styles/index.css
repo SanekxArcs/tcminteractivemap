@@ -436,6 +436,12 @@ input:checked + .slider:before { transform: translateX(21px); }
   font-family: Arial, sans-serif;
   cursor: grab;
 }
+.dev-pin-dot.dev-pin-checkpoint {
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  border-width: 1.5px;
+}
 
 /* ── CSS-based challenge map markers ─────────────────────────── */
 .chal-icon {

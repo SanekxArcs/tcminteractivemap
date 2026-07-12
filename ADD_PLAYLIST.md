@@ -19,6 +19,16 @@ Duplicate the placeholder object inside each array (`events`, `feats`, `photoOps
 
 **Feat `type` values:** `escape` | `slalom` | `speedtrap` | `drift`
 
+**Event `checkpoints` (optional):** add a `checkpoints` array to an event to draw its full track on the map. First entry is treated as start, last as finish, any in between as checkpoints. Needs at least 2 points to draw; omit the field entirely if the event has no track data — it falls back to the plain info toast. You don't have to hand-write these coordinates — both `?dev` and `?dev-edit` can add/drag/remove checkpoints for you (see [DEV_MODE_GUIDE.md](./DEV_MODE_GUIDE.md)).
+
+```json
+"checkpoints": [
+  { "lat": 0, "lng": 0 },
+  { "lat": 0, "lng": 0 },
+  { "lat": 0, "lng": 0 }
+]
+```
+
 ```json
 {
   "id": "",

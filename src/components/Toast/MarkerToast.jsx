@@ -19,13 +19,17 @@ export default function MarkerToast({ data, onClose }) {
   const timerRef  = useRef(null);
   const startRef  = useRef(null);
 
+  const hasTrack = data?.checkpoints && data.checkpoints.length > 1;
+
   useEffect(() => {
     if (!data) { setVisible(false); return; }
     setVisible(true);
     setProgress(100);
-    startRef.current = Date.now();
 
     clearInterval(timerRef.current);
+    if (hasTrack) return;
+
+    startRef.current = Date.now();
     timerRef.current = setInterval(() => {
       const elapsed = Date.now() - startRef.current;
       const pct = Math.max(0, 100 - (elapsed / AUTO_CLOSE_MS) * 100);
@@ -38,7 +42,7 @@ export default function MarkerToast({ data, onClose }) {
     }, 50);
 
     return () => clearInterval(timerRef.current);
-  }, [data]);
+  }, [data, hasTrack]);
 
   if (!data) return null;
 
@@ -55,13 +59,15 @@ export default function MarkerToast({ data, onClose }) {
       }}
     >
       {/* Progress bar */}
-      <div
-        style={{
-          ...styles.progressBar,
-          width: `${progress}%`,
-          background: color,
-        }}
-      />
+      {!hasTrack && (
+        <div
+          style={{
+            ...styles.progressBar,
+            width: `${progress}%`,
+            background: color,
+          }}
+        />
+      )}
 
       {/* Header */}
       <div style={styles.header}>

@@ -14,7 +14,13 @@
       "car": "Ford Mustang GT Fastback",
       "category": "Street Tier 2",
       "xp": "8,400",
-      "bucks": "15,750"
+      "bucks": "15,750",
+      "checkpoints": [
+        { "lat": 2442.904726, "lng": 2235.606477 },
+        { "lat": 2460.5, "lng": 2223.25 },
+        { "lat": 2476.5, "lng": 2207.75 },
+        { "lat": 2491.5, "lng": 2189.25 }
+      ]
     },
     {
       "lat": 2092.382066,

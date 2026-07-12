@@ -111,7 +111,7 @@ function buildEntry(p) {
   }
 
   if (type === 'event') {
-    return {
+    const entry = {
       lat, lng,
       name: fields.name || '',
       number: fields.number || '',
@@ -122,6 +122,10 @@ function buildEntry(p) {
       xp: fields.xp || '',
       bucks: fields.bucks || '',
     };
+    if (fields.checkpoints && fields.checkpoints.length > 0) {
+      entry.checkpoints = fields.checkpoints.map(cp => ({ lat: cp.lat, lng: cp.lng }));
+    }
+    return entry;
   }
 
   if (type === 'feat') {
@@ -190,8 +194,10 @@ export default function DevCoordinatePicker() {
   const [copied, setCopied]         = useState(false);
   const [minimized, setMinimized]   = useState(false);
   const [showHelp, setShowHelp]     = useState(false);
+  const [checkpointArmedFor, setCheckpointArmedFor] = useState(null);
   const panelRef                    = useRef(null);
   const pinGroupRef                 = useRef(null);
+  const checkpointGroupRef          = useRef(null);
 
   useEffect(() => {
     if (panelRef.current) {
@@ -232,13 +238,56 @@ export default function DevCoordinatePicker() {
     });
   }, [points]);
 
+  // Draggable pins for each event's checkpoints, drawn as a separate, smaller-styled group.
+  useEffect(() => {
+    checkpointGroupRef.current = L.featureGroup().addTo(map);
+    return () => { checkpointGroupRef.current.remove(); checkpointGroupRef.current = null; };
+  }, [map]);
+
+  useEffect(() => {
+    const group = checkpointGroupRef.current;
+    if (!group) return;
+    group.clearLayers();
+
+    points.forEach(p => {
+      if (p.type !== 'event') return;
+      const checkpoints = p.fields?.checkpoints || [];
+      checkpoints.forEach((cp, idx) => {
+        const label = idx === 0 ? 'S' : idx === checkpoints.length - 1 ? 'F' : String(idx);
+        const icon = L.divIcon({
+          className: 'dev-pin',
+          html: `<div class="dev-pin-dot dev-pin-checkpoint" style="background:${TYPE_COLORS.event || '#888'}">${label}</div>`,
+          iconSize: [16, 16],
+          iconAnchor: [8, 8],
+        });
+        const marker = L.marker([cp.lat, cp.lng], { icon, draggable: true }).addTo(group);
+        marker.on('dragend', () => {
+          const ll = marker.getLatLng();
+          updateCheckpoint(p.id, idx, parseFloat(ll.lat.toFixed(6)), parseFloat(ll.lng.toFixed(6)));
+        });
+      });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [points]);
+
   function handleMapClick(latlng) {
+    const lat = parseFloat(latlng.lat.toFixed(6));
+    const lng = parseFloat(latlng.lng.toFixed(6));
+
+    if (checkpointArmedFor) {
+      setPoints(prev => prev.map(p => p.id !== checkpointArmedFor ? p : {
+        ...p,
+        fields: { ...p.fields, checkpoints: [...(p.fields?.checkpoints || []), { lat, lng }] },
+      }));
+      return;
+    }
+
     setPoints(prev => [
       ...prev,
       {
         id: Date.now(),
-        lat: parseFloat(latlng.lat.toFixed(6)),
-        lng: parseFloat(latlng.lng.toFixed(6)),
+        lat,
+        lng,
         type: activeType,
         name: '',
         icon: activeType === 'challenge' ? 'start' : undefined,
@@ -246,6 +295,27 @@ export default function DevCoordinatePicker() {
         expanded: true,
       },
     ]);
+  }
+
+  function armCheckpoints(id) {
+    setCheckpointArmedFor(prev => prev === id ? null : id);
+  }
+
+  function removeCheckpoint(pointId, idx) {
+    setPoints(prev => prev.map(p => p.id !== pointId ? p : {
+      ...p,
+      fields: { ...p.fields, checkpoints: (p.fields?.checkpoints || []).filter((_, i) => i !== idx) },
+    }));
+  }
+
+  function updateCheckpoint(pointId, idx, lat, lng) {
+    setPoints(prev => prev.map(p => p.id !== pointId ? p : {
+      ...p,
+      fields: {
+        ...p.fields,
+        checkpoints: (p.fields?.checkpoints || []).map((cp, i) => i === idx ? { lat, lng } : cp),
+      },
+    }));
   }
 
   function updateName(id, name) {
@@ -412,6 +482,41 @@ export default function DevCoordinatePicker() {
                             )}
                           </div>
                         ))}
+
+                        {p.type === 'event' && (
+                          <div style={styles.checkpointsBlock}>
+                            <div style={styles.checkpointsHeader}>
+                              <span style={styles.fieldLabel}>
+                                Checkpoints ({(p.fields?.checkpoints || []).length})
+                              </span>
+                              <button
+                                type="button"
+                                style={{
+                                  ...styles.smallBtn,
+                                  ...(checkpointArmedFor === p.id ? styles.smallBtnActive : {}),
+                                }}
+                                onClick={() => armCheckpoints(p.id)}
+                              >
+                                {checkpointArmedFor === p.id ? '● click map to add…' : '+ add via map click'}
+                              </button>
+                            </div>
+                            {(p.fields?.checkpoints || []).map((cp, idx, arr) => (
+                              <div key={idx} style={styles.checkpointRow}>
+                                <span style={styles.checkpointIndex}>
+                                  {idx === 0 ? 'S' : idx === arr.length - 1 ? 'F' : idx}
+                                </span>
+                                <span style={styles.pointCoords}>{cp.lat}, {cp.lng}</span>
+                                <button
+                                  type="button"
+                                  style={styles.removeBtn}
+                                  onClick={() => removeCheckpoint(p.id, idx)}
+                                >
+                                  ✕
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
@@ -448,11 +553,6 @@ export default function DevCoordinatePicker() {
                 Clear ({points.length})
               </button>
             </div>
-
-            {/* Preview */}
-            {points.length > 0 && (
-              <pre style={styles.preview}>{buildJson()}</pre>
-            )}
           </>
         )}
       </div>
@@ -634,6 +734,47 @@ const styles = {
     alignItems: 'center',
     gap: '6px',
   },
+  checkpointsBlock: {
+    marginTop: '4px',
+    paddingTop: '6px',
+    borderTop: '1px solid #262626',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '4px',
+  },
+  checkpointsHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: '6px',
+  },
+  checkpointRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '6px',
+  },
+  checkpointIndex: {
+    minWidth: '14px',
+    textAlign: 'right',
+    fontSize: '10px',
+    fontWeight: 'bold',
+    color: '#888',
+  },
+  smallBtn: {
+    background: '#1a1a1a',
+    border: '1px solid #333',
+    color: '#5b9bd9',
+    borderRadius: '3px',
+    padding: '2px 6px',
+    fontSize: '10px',
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+  },
+  smallBtnActive: {
+    background: '#1a3a1a',
+    borderColor: '#2a8a2a',
+    color: '#6fdd6f',
+  },
   fieldLabel: {
     color: '#777',
     fontSize: '10px',
@@ -686,17 +827,5 @@ const styles = {
     background: '#3a1a1a',
     borderColor: '#aa3333',
     color: '#dd6666',
-  },
-  preview: {
-    background: '#0a0a0a',
-    borderTop: '1px solid #222',
-    margin: 0,
-    padding: '8px 10px',
-    fontSize: '10px',
-    color: '#888',
-    overflowX: 'auto',
-    maxHeight: '140px',
-    overflowY: 'auto',
-    flexShrink: 0,
   },
 };

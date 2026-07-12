@@ -14,6 +14,7 @@ export default function App() {
   const [challengesMode, setChallengesMode] = useState(false);
   const [activeChallenge, setActiveChallenge]  = useState(null);
   const [toastData, setToastData]              = useState(null);
+  const [activeTrack, setActiveTrack]          = useState(null);
 
   const mapRef = useRef(null);
   const handleMapReady = useCallback((map) => { mapRef.current = map; }, []);
@@ -21,7 +22,10 @@ export default function App() {
     mapRef.current?.flyTo([lat, lng], zoom, { duration: 0.8 });
   }, []);
 
-  const handleMarkerClick = useCallback((data) => setToastData(data), []);
+  const handleMarkerClick = useCallback((data) => {
+    setToastData(data);
+    setActiveTrack(data?.checkpoints?.length > 1 ? data.checkpoints : null);
+  }, []);
 
   return (
     <>
@@ -33,6 +37,7 @@ export default function App() {
         regionsData={regionsData}
         filters={filters}
         activeChallenge={activeChallenge}
+        activeTrack={activeTrack}
         onMarkerClick={handleMarkerClick}
         onMapReady={handleMapReady}
       />
@@ -61,7 +66,10 @@ export default function App() {
         regionsData={regionsData}
         flyTo={flyTo}
       />
-      <MarkerToast data={toastData} onClose={() => setToastData(null)} />
+      <MarkerToast
+        data={toastData}
+        onClose={() => { setToastData(null); setActiveTrack(null); }}
+      />
     </>
   );
 }

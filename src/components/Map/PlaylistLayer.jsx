@@ -54,6 +54,7 @@ export default function PlaylistLayer({ data, filters, onMarkerClick }) {
         ],
         xp:    ev.xp,
         bucks: ev.bucks,
+        checkpoints: ev.checkpoints,
       }, ev.name, groups.events, onMarkerClick);
     });
 

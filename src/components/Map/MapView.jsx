@@ -7,6 +7,7 @@ import PlaylistLayer from "./PlaylistLayer";
 import MiscLayer from "./MiscLayer";
 import ChallengeLayer from "./ChallengeLayer";
 import RegionLayer from "./RegionLayer";
+import TrackLayer from "./TrackLayer";
 import DevCoordinatePicker from "../Dev/DevCoordinatePicker";
 import DevEditPanel from "../Dev/DevEditPanel";
 import { PLAYLISTS } from "../../data/playlistConfig";
@@ -34,6 +35,8 @@ function MapSetup() {
     map.createPane("regions");
     map.getPane("regions").style.zIndex = 450;
     map.getPane("regions").style.pointerEvents = "none";
+    map.createPane("track");
+    map.getPane("track").style.zIndex = 620;
   }, [map]);
   return null;
 }
@@ -54,6 +57,7 @@ export default function MapView({
   regionsData,
   filters,
   activeChallenge,
+  activeTrack,
   onMarkerClick,
   onMapReady,
 }) {
@@ -102,6 +106,8 @@ export default function MapView({
         activeChallenge={activeChallenge}
         onMarkerClick={onMarkerClick}
       />
+
+      <TrackLayer track={activeTrack} />
 
       {IS_DEV_MODE && <DevCoordinatePicker />}
       {IS_DEV_EDIT_MODE && (

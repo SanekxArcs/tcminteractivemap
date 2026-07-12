@@ -35,6 +35,7 @@ export const PLAYLISTS = [
   { id: 'nascar', name: 'Nascar Motorfert Tour', filterKey: 'nascar', icon: '/img/Nascar/nascar_event.png' },
   { id: 'rcfrenzy', name: 'RC Frenzy', filterKey: 'rcfrenzy', icon: '/img/RCFrenzy/rcfrenzy_event.png' },
   { id: 'latenightshow', name: 'Late Night Show', filterKey: 'latenightshow', icon: '/img/LateNightShow/latenightshow_event.png' },
+  { id: 'hawaigrandtour', name: 'Hawaii Grand Tour', filterKey: 'hawaigrandtour', icon: '/img/HawaiiGrandTour/hawaigrandtour_event.png' },
 ];
 
 export const PLAYLIST_ICON_BY_NAME = Object.fromEntries(

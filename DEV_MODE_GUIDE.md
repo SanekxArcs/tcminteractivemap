@@ -28,6 +28,8 @@ Each type maps to a specific file/array in `public/`. Types with extra fields ha
 → `events` array in `public/data/playlists/{id}.json`
 Fields: name, number (e.g. `1/9`), type (Race, Outrun, …), weather (type-in with suggestions), car, category, xp, bucks.
 
+**Checkpoints (optional track):** expand an event's fields and use **+ add via map click**, then click the map to drop checkpoint pins one at a time (first click = start, last = finish) — click the button again to stop adding. Checkpoints show up as small numbered pins (`S` / number / `F`), separate from the main event pin, and are draggable to fine-tune placement. **✕** on a checkpoint row removes it. Leave the list empty to skip — events without checkpoints work exactly as before (just the info toast, no track drawn).
+
 ### Feat
 → `feats` array in the same playlist file
 Fields: type — dropdown of `speedtrap` / `slalom` / `escape` / `drift` / `long_jump` / `bullseye` / `buoy_smashing` (this also drives the `featType` label, filled in automatically), location, objective, xp, bucks.
@@ -103,6 +105,7 @@ The panel shows exactly which file the data comes from (e.g. `→ public/data/pl
 
 - Every point in the selected category shows up as a numbered, colored, **draggable** pin on the map and as a row in the list. Drag a pin to move it; the row's lat/lng inputs update to match (and you can also type exact numbers directly into those inputs).
 - Click a row's name button to expand it and edit every field the point has (name, xp, requirements, whatever that type stores) — array-type fields (like Photo Op requirements) use a textarea, one line per entry.
+- **Every event** gets a **checkpoints** sub-list at the bottom of its expanded fields (starts empty if the event has none yet): each checkpoint shows as a `S` / number / `F` row with its lat/lng and a **✕** to remove it, plus draggable pins on the map (only while that event's row is expanded) to nudge placement. **+ add at map center** appends a new checkpoint at whatever the map is currently centered on — drag it into place afterward. An event with zero checkpoints saves exactly as before (no `checkpoints` key written).
 - **+ field** on an expanded row adds a new custom key/value pair; **✕** next to a field removes it, **✕** on the row removes the whole point.
 - **+ Add new** appends a fresh point at the current map center, copying the field shape (keys, blanked out) of the first point already in the list.
 - **Reset** discards all local edits and reloads straight from the fetched data.
