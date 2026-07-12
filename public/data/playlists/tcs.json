@@ -2,7 +2,10 @@
   "id": "tcs",
   "name": "The Chase Squad",
   "imgFolder": "ChaseSquad",
-  "container": { "lat": 1400.43992, "lng": 5347.495033 },
+  "container": {
+    "lat": 1400.43992,
+    "lng": 5347.495033
+  },
   "events": [
     {
       "lat": 1385.940402,
@@ -232,9 +235,25 @@
     }
   ],
   "collectibles": [
-    { "lat": 1772.544324, "lng": 5377.193518, "challenge": "Code 10 - Gordon" },
-    { "lat": 1691.085142, "lng": 5376.309634, "challenge": "Code 10 - Gordon" },
-    { "lat": 1538.012433, "lng": 5323.983732, "challenge": "Code 10 - Gordon" },
-    { "lat": 1592.273781, "lng": 5212.437638, "challenge": "Code 10 - Gordon" }
+    {
+      "lat": 1772.544324,
+      "lng": 5377.193518,
+      "challenge": "Code 10 - Gordon"
+    },
+    {
+      "lat": 1691.085142,
+      "lng": 5376.309634,
+      "challenge": "Code 10 - Gordon"
+    },
+    {
+      "lat": 1538.012433,
+      "lng": 5323.983732,
+      "challenge": "Code 10 - Gordon"
+    },
+    {
+      "lat": 1592.273781,
+      "lng": 5212.437638,
+      "challenge": "Code 10 - Gordon"
+    }
   ]
 }

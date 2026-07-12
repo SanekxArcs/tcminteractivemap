@@ -8,7 +8,7 @@ import challengesMeta from './data/challengesMeta.json';
 
 export default function App() {
   const { filters, togglePlaylist, toggleActivity, toggleMisc, toggleRival,
-          toggleSection, hideAll, showAll } = useFilters();
+          toggleRegions, toggleSection, hideAll, showAll } = useFilters();
   const { playlistData, miscData, rivalsData, challengesData, regionsData } = useMapData();
 
   const [challengesMode, setChallengesMode] = useState(false);
@@ -42,6 +42,7 @@ export default function App() {
         onToggleActivity={toggleActivity}
         onToggleMisc={toggleMisc}
         onToggleRival={toggleRival}
+        onToggleRegions={toggleRegions}
         onToggleSection={toggleSection}
         onHideAll={hideAll}
         onShowAll={showAll}

@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef } from 'react';
 
-const TYPE_COLORS = {
+export const TYPE_COLORS = {
   event:      '#3498db',
   feat:       '#9b59b6',
   photoOp:    '#e67e22',

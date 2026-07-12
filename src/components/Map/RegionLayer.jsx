@@ -2,16 +2,12 @@ import { useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 
-export default function RegionLayer({ regions }) {
+export default function RegionLayer({ regions, visible = true }) {
   const map = useMap();
   const markersRef = useRef([]);
 
   useEffect(() => {
-    if (!regions || regions.length === 0) return;
-
-    map.createPane('regions');
-    map.getPane('regions').style.zIndex = 200;
-    map.getPane('regions').style.pointerEvents = 'none';
+    if (!visible || !regions || regions.length === 0) return;
 
     const markers = regions.map(r => {
       const icon = L.divIcon({
@@ -28,7 +24,7 @@ export default function RegionLayer({ regions }) {
       markers.forEach(m => m.remove());
       markersRef.current = [];
     };
-  }, [regions, map]);
+  }, [regions, map, visible]);
 
   return null;
 }

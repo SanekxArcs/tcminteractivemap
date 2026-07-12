@@ -29,6 +29,9 @@ function MapSetup() {
     map.getPane("challenges").style.zIndex = 600;
     map.createPane("challenges-popup");
     map.getPane("challenges-popup").style.zIndex = 700;
+    map.createPane("regions");
+    map.getPane("regions").style.zIndex = 450;
+    map.getPane("regions").style.pointerEvents = "none";
   }, [map]);
   return null;
 }
@@ -74,7 +77,7 @@ export default function MapView({
       <ZoomControl position="bottomright" />
       <ImageOverlay url="/img/oahu_maui.webp" bounds={BOUNDS} />
 
-      <RegionLayer regions={regionsData} />
+      <RegionLayer regions={regionsData} visible={filters.regions} />
 
       {PLAYLISTS.map((p) => (
         <PlaylistLayer

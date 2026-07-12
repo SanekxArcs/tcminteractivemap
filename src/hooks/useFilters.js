@@ -16,7 +16,7 @@ function buildDefaultState() {
   const rivals = {};
   RIVALS_ITEMS.forEach(r => { rivals[r.id] = false; });
 
-  return { playlists, activities, misc, rivals };
+  return { playlists, activities, misc, rivals, regions: true };
 }
 
 function buildInitialState() {
@@ -30,6 +30,7 @@ function buildInitialState() {
         activities: { ...defaults.activities, ...parsed.activities },
         misc:       { ...defaults.misc,       ...parsed.misc },
         rivals:     { ...defaults.rivals,     ...parsed.rivals },
+        regions:    parsed.regions ?? defaults.regions,
       };
     }
   } catch {}
@@ -69,6 +70,10 @@ export function useFilters() {
       ...prev,
       rivals: { ...prev.rivals, [key]: !prev.rivals[key] },
     }));
+  }, []);
+
+  const toggleRegions = useCallback(() => {
+    setFilters(prev => ({ ...prev, regions: !prev.regions }));
   }, []);
 
   const setAllPlaylists = useCallback((value) => {
@@ -119,6 +124,7 @@ export function useFilters() {
     toggleActivity,
     toggleMisc,
     toggleRival,
+    toggleRegions,
     setAllPlaylists,
     hideAll,
     showAll,

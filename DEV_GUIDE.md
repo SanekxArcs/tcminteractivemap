@@ -170,14 +170,9 @@ Open the map with `?dev` in the URL:
 http://localhost:5173/?dev
 ```
 
-This enables a **Dev Panel** in the top-right corner:
+This enables a **Dev Panel** in the top-right corner for placing points (events, feats, photo ops, collectibles, containers, misc, challenges, regions, rivals) directly on the map and exporting them as ready-to-paste JSON.
 
-- **Click anywhere on the map** → coordinate is added to the list
-- **Label each point** by selecting a type (event / feat / photoOp / collectible / container / misc / challenge)
-- **Copy as JSON** → copies the collected points as a ready-to-paste JSON array
-- **Clear** → resets the list
-
-The copied JSON matches exactly the schema used in the data files.
+See **[DEV_MODE_GUIDE.md](./DEV_MODE_GUIDE.md)** for the full walkthrough — or click the **?** button in the Dev Panel itself while `?dev` is active.
 
 ---
 

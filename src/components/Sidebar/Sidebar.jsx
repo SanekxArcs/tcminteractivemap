@@ -17,6 +17,7 @@ export default function Sidebar({
   onToggleActivity,
   onToggleMisc,
   onToggleRival,
+  onToggleRegions,
   onToggleSection,
   onHideAll,
   onShowAll,
@@ -98,6 +99,17 @@ export default function Sidebar({
                 type="checkbox"
                 checked={challengesMode}
                 onChange={onToggleChallengesMode}
+              />
+              <span className="sb-slider" />
+            </label>
+          </div>
+          <div className="sb-setting-row">
+            <span className="sb-setting-label">Region Labels</span>
+            <label className="sb-switch">
+              <input
+                type="checkbox"
+                checked={filters.regions}
+                onChange={onToggleRegions}
               />
               <span className="sb-slider" />
             </label>
