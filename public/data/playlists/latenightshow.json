@@ -8,16 +8,52 @@
     },
     "events": [
         {
-            "lat": 0,
-            "lng": 0,
-            "name": "",
-            "number": "1/0",
-            "type": "",
-            "weather": "",
-            "car": "",
-            "category": "",
-            "xp": "",
-            "bucks": ""
+            "lat": 898.6875,
+            "lng": 5803.875,
+            "name": "ALPINE STAYS FROSTY",
+            "number": "1/12",
+            "type": "RACE",
+            "weather": "Afternoon",
+            "car": "ALPINE A110 R ULTIME, ALPINE ALPENGLOW Hy6 Concept ",
+            "category": "STREET TIER 2",
+            "xp": "10.000",
+            "bucks": "18,750"
+        },
+        {
+            "lat": 457.8125,
+            "lng": 6077.75,
+            "name": "BEWARE OF THE WOLF",
+            "number": "2/12",
+            "type": "VIDEO LANE",
+            "weather": "Midday",
+            "car": "FENYR SUPERSPORT ",
+            "category": "HYPERCAR",
+            "xp": "8.000",
+            "bucks": "15,000"
+        },
+        {
+            "lat": 947.788252,
+            "lng": 4749.371084,
+            "name": "THE JAPANESE FALCON",
+            "number": "3/12",
+            "type": "RACE",
+            "weather": "Dawn",
+            "car": "HAYABUSA",
+            "category": "STREET TIER 2",
+            "xp": "9,000",
+            "bucks": "16.875"
+        },
+        {
+            "lat": 1497.0625,
+            "lng": 3272.25,
+            "name": "DELAGE'S RENAISSANCE",
+            "number": "4/12",
+            "type": "RACE",
+            "weather": "Midday",
+            "car": "DELAGE D12",
+            "category": "HYPERCAR",
+            "xp": "10.000",
+            "bucks": "18.750"
         }
     ],
     "feats": [
@@ -42,9 +78,29 @@
     ],
     "collectibles": [
         {
-            "lat": 0,
-            "lng": 0,
-            "challenge": ""
+            "lat": 1431.9375,
+            "lng": 1578.25,
+            "challenge": "Find all the DIAMOND COLLECTIBLES located near LUXURY HOTELS."
+        },
+        {
+            "lat": 1267.5625,
+            "lng": 2812.0625,
+            "challenge": "Find all the DIAMOND COLLECTIBLES located near LUXURY HOTELS."
+        },
+        {
+            "lat": 1309.6875,
+            "lng": 2878.75,
+            "challenge": "Find all the DIAMOND COLLECTIBLES located near LUXURY HOTELS."
+        },
+        {
+            "lat": 3301.125,
+            "lng": 2271.5,
+            "challenge": "Find all the DIAMOND COLLECTIBLES located near LUXURY HOTELS."
+        },
+        {
+            "lat": 2937.3125,
+            "lng": 1778.375,
+            "challenge": "Find all the DIAMOND COLLECTIBLES located near LUXURY HOTELS."
         }
     ]
 }
