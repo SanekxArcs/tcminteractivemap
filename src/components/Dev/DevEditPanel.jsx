@@ -243,6 +243,13 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
     setItems(prev => prev.map(p => p.id === id ? { ...p, [key]: n } : p));
   }
 
+  function setItemToCenter(itemId) {
+    const center = map.getCenter();
+    const lat = parseFloat(center.lat.toFixed(6));
+    const lng = parseFloat(center.lng.toFixed(6));
+    setItems(prev => prev.map(p => p.id === itemId ? { ...p, lat, lng } : p));
+  }
+
   function updateFieldValue(itemId, idx, value) {
     setItems(prev => prev.map(p => p.id !== itemId ? p : {
       ...p,
@@ -458,6 +465,14 @@ export default function DevEditPanel({ playlistData, miscData, rivalsData, chall
                       value={item.lng}
                       onChange={e => updateLatLng(item.id, 'lng', e.target.value)}
                     />
+                    <button
+                      type="button"
+                      style={styles.centerBtn}
+                      title="Set to map center"
+                      onClick={() => setItemToCenter(item.id)}
+                    >
+                      ⌖
+                    </button>
                     <button type="button" style={styles.expandBtn} onClick={() => toggleExpanded(item.id)}>
                       {item.expanded ? `▾ ${itemLabel(item, i)}` : `▸ ${itemLabel(item, i)}`}
                     </button>
@@ -705,6 +720,19 @@ const styles = {
     padding: '2px 4px',
     fontSize: '10px',
     fontFamily: 'monospace',
+  },
+  centerBtn: {
+    flexShrink: 0,
+    background: '#1a1a1a',
+    border: '1px solid #333',
+    color: '#5b9bd9',
+    borderRadius: '3px',
+    width: '20px',
+    height: '20px',
+    lineHeight: 1,
+    padding: 0,
+    fontSize: '13px',
+    cursor: 'pointer',
   },
   expandBtn: {
     flex: 1,

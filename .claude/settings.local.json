@@ -22,7 +22,8 @@
       "Bash(node -e \"const m = require\\(''''./public/data/challengesMeta.json''''\\); m.forEach\\(g => console.log\\(g.playlist\\)\\)\")",
       "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\); JSON.parse\\(d\\).forEach\\(g=>console.log\\(g.playlist\\)\\)\")",
       "Bash(node -e \"const m=require\\(''./src/data/challengesMeta.json''\\); m.forEach\\(g=>console.log\\(g.playlist\\)\\)\")",
-      "Bash(wc -l /c/Users/sanek/Documents/GitHub/tcminteractivemap/src/styles/*.css)"
+      "Bash(wc -l /c/Users/sanek/Documents/GitHub/tcminteractivemap/src/styles/*.css)",
+      "Bash(node -e \"const d=require\\('./public/data/playlists/al.json'\\); console.log\\(JSON.stringify\\(d, null, 2\\).slice\\(0,2500\\)\\)\")"
     ]
   }
 }
