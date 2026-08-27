@@ -56,6 +56,7 @@ export default function MapView({
   challengesData,
   regionsData,
   filters,
+  sharedPointId,
   activeChallenge,
   activeTrack,
   onMarkerClick,
@@ -83,13 +84,14 @@ export default function MapView({
       <ZoomControl position="bottomright" />
       <ImageOverlay url="/img/oahu_maui.webp" bounds={BOUNDS} />
 
-      <RegionLayer regions={regionsData} visible={filters.regions} />
+      <RegionLayer regions={regionsData} visible={filters.regions && !sharedPointId} />
 
       {PLAYLISTS.map((p) => (
         <PlaylistLayer
           key={p.id}
           data={playlistData[p.id] || null}
           filters={filters}
+          sharedPointId={sharedPointId}
           onMarkerClick={onMarkerClick}
         />
       ))}
@@ -98,12 +100,14 @@ export default function MapView({
         miscData={miscData}
         rivalsData={rivalsData}
         filters={filters}
+        sharedPointId={sharedPointId}
         onMarkerClick={onMarkerClick}
       />
 
       <ChallengeLayer
         challengesData={challengesData}
         activeChallenge={activeChallenge}
+        sharedPointId={sharedPointId}
         onMarkerClick={onMarkerClick}
       />
 

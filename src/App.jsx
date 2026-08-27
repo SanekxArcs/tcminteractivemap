@@ -5,6 +5,7 @@ import MapView from './components/Map/MapView';
 import Sidebar from './components/Sidebar/Sidebar';
 import MarkerToast from './components/Toast/MarkerToast';
 import challengesMeta from './data/challengesMeta.json';
+import { getSharedPointId } from './utils/sharedPoint';
 
 export default function App() {
   const { filters, togglePlaylist, toggleActivity, toggleMisc, toggleRival,
@@ -15,6 +16,7 @@ export default function App() {
   const [activeChallenge, setActiveChallenge]  = useState(null);
   const [toastData, setToastData]              = useState(null);
   const [activeTrack, setActiveTrack]          = useState(null);
+  const [sharedPointId] = useState(getSharedPointId);
 
   const mapRef = useRef(null);
   const handleMapReady = useCallback((map) => { mapRef.current = map; }, []);
@@ -36,6 +38,7 @@ export default function App() {
         challengesData={challengesData}
         regionsData={regionsData}
         filters={filters}
+        sharedPointId={sharedPointId}
         activeChallenge={activeChallenge}
         activeTrack={activeTrack}
         onMarkerClick={handleMarkerClick}

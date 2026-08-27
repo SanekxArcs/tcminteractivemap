@@ -15,6 +15,7 @@ export default function MiscLayer({
   miscData,
   rivalsData,
   filters,
+  sharedPointId,
   onMarkerClick,
 }) {
   const map = useMap();
@@ -28,6 +29,8 @@ export default function MiscLayer({
         const markers = miscData[key] || [];
         const group = L.featureGroup();
         markers.forEach((m) => {
+          const pointId = `misc:${key}:${m.lat},${m.lng}`;
+          if (sharedPointId && sharedPointId !== pointId) return;
           const marker = L.marker([m.lat, m.lng], { icon: miscIcons[cfg.icon] })
             .bindTooltip(m.name || cfg.label, {
               direction: "top",
@@ -41,8 +44,19 @@ export default function MiscLayer({
               type: key === "treasure" ? "container" : "misc",
               name: m.name || cfg.label,
               subtitle: cfg.type,
+              pointId,
             });
           });
+          if (sharedPointId === pointId) {
+            map.setView([m.lat, m.lng], Math.max(map.getZoom(), 0), { animate: false });
+            marker.openTooltip();
+            onMarkerClick({
+              type: key === "treasure" ? "container" : "misc",
+              name: m.name || cfg.label,
+              subtitle: cfg.type,
+              pointId,
+            });
+          }
         });
         groups[key] = group;
       });
@@ -52,6 +66,8 @@ export default function MiscLayer({
       Object.entries(rivalsData).forEach(([key, markers]) => {
         const group = L.featureGroup();
         markers.forEach((m) => {
+          const pointId = `rival:${key}:${m.lat},${m.lng}`;
+          if (sharedPointId && sharedPointId !== pointId) return;
           const label = m.name ? `${m.name} (${m.gang || key})` : m.gang || key;
           const marker = L.marker([m.lat, m.lng], {
             icon: miscIcons.achievement,
@@ -68,8 +84,14 @@ export default function MiscLayer({
               type: "rival",
               name: m.name || key,
               subtitle: `Rival · ${m.gang || key}`,
+              pointId,
             });
           });
+          if (sharedPointId === pointId) {
+            map.setView([m.lat, m.lng], Math.max(map.getZoom(), 0), { animate: false });
+            marker.openTooltip();
+            onMarkerClick({ type: "rival", name: m.name || key, subtitle: `Rival · ${m.gang || key}`, pointId });
+          }
         });
         groups[`rival_${key}`] = group;
       });
@@ -80,7 +102,7 @@ export default function MiscLayer({
       Object.values(groups).forEach((g) => g.remove());
       groupsRef.current = {};
     };
-  }, [miscData, rivalsData, map, onMarkerClick]);
+  }, [miscData, rivalsData, map, onMarkerClick, sharedPointId]);
 
   useEffect(() => {
     const groups = groupsRef.current;
@@ -88,7 +110,9 @@ export default function MiscLayer({
 
     Object.entries(groups).forEach(([key, group]) => {
       let visible = false;
-      if (key.startsWith("rival_")) {
+      if (sharedPointId) {
+        visible = group.getLayers().length > 0;
+      } else if (key.startsWith("rival_")) {
         const rivalKey = key.replace("rival_", "");
         visible = filters.rivals[rivalKey] ?? false;
       } else {

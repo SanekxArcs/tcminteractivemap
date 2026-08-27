@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { createShareUrl } from '../../utils/sharedPoint';
 
 const TYPE_COLORS = {
   event:       '#3498db',
@@ -16,10 +17,22 @@ const AUTO_CLOSE_MS = 7000;
 export default function MarkerToast({ data, onClose }) {
   const [visible, setVisible]   = useState(false);
   const [progress, setProgress] = useState(100);
+  const [copied, setCopied]     = useState(false);
   const timerRef  = useRef(null);
   const startRef  = useRef(null);
 
   const hasTrack = data?.checkpoints && data.checkpoints.length > 1;
+
+  const copyShareLink = async () => {
+    if (!data?.pointId) return;
+    try {
+      await navigator.clipboard.writeText(createShareUrl(data.pointId));
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.prompt('Copy this link:', createShareUrl(data.pointId));
+    }
+  };
 
   useEffect(() => {
     if (!data) { setVisible(false); return; }
@@ -89,6 +102,14 @@ export default function MarkerToast({ data, onClose }) {
 
       {/* Subtitle */}
       {data.subtitle && <div style={styles.subtitle}>{data.subtitle}</div>}
+
+      {data.pointId && (
+        <div style={styles.shareRow}>
+          <button type="button" style={styles.shareBtn} onClick={copyShareLink}>
+            {copied ? 'Link copied' : 'Copy share link'}
+          </button>
+        </div>
+      )}
 
       {/* Fields */}
       {data.fields && data.fields.length > 0 && (
@@ -198,6 +219,20 @@ const styles = {
     fontSize: '12px',
     color: '#888',
     fontStyle: 'italic',
+  },
+  shareRow: {
+    padding: '0 14px 10px',
+  },
+  shareBtn: {
+    width: '100%',
+    padding: '7px 10px',
+    border: '1px solid #3c78a7',
+    borderRadius: '5px',
+    background: '#18334a',
+    color: '#dceeff',
+    cursor: 'pointer',
+    fontSize: '12px',
+    fontWeight: 'bold',
   },
   fields: {
     padding: '4px 14px 8px',
