@@ -6,7 +6,6 @@
       "name": "Made in Japan Container",
       "icon": "start"
     },
-
     {
       "lat": 1995.776591,
       "lng": 2952.75,
@@ -14,7 +13,6 @@
       "icon": "finish"
     }
   ],
-
   "Nihon No Kohai": [
     {
       "lat": 1395.642623,
@@ -23,7 +21,6 @@
       "icon": "challenge"
     }
   ],
-
   "Nihon No Style": [
     {
       "lat": 1995.776591,
@@ -31,7 +28,6 @@
       "name": "Japanese Temple",
       "icon": "start"
     },
-
     {
       "lat": 1301.57298,
       "lng": 2898.5,
@@ -39,7 +35,6 @@
       "icon": "finish"
     }
   ],
-
   "Nihon No Jaunt": [
     {
       "lat": 1328.008977,
@@ -47,7 +42,6 @@
       "name": "Oahu Airport",
       "icon": "start"
     },
-
     {
       "lat": 1134.524045,
       "lng": 2989.5,
@@ -55,7 +49,6 @@
       "icon": "finish"
     }
   ],
-
   "Rainbow Flash": [
     {
       "lat": 1355.554348,
@@ -64,7 +57,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Peak": [
     {
       "lat": 1776.192422,
@@ -73,7 +65,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Stroll": [
     {
       "lat": 2261.257453,
@@ -81,7 +72,6 @@
       "name": "Makua Caves",
       "icon": "start"
     },
-
     {
       "lat": 1328.008977,
       "lng": 2404.870163,
@@ -89,7 +79,6 @@
       "icon": "finish"
     }
   ],
-
   "Rainbow Spiral": [
     {
       "lat": 1449.411736,
@@ -98,7 +87,6 @@
       "icon": "challenge"
     }
   ],
-
   "Rainbow Lava": [
     {
       "lat": 2169.021374,
@@ -107,7 +95,6 @@
       "icon": "challenge"
     }
   ],
-
   "American Vacation": [
     {
       "lat": 1353.769194,
@@ -116,7 +103,6 @@
       "icon": "challenge"
     }
   ],
-
   "American Cruiser": [
     {
       "lat": 2786.657712,
@@ -124,7 +110,6 @@
       "name": "Ma'akua Black Beach",
       "icon": "start"
     },
-
     {
       "lat": 1283.245745,
       "lng": 1804.006176,
@@ -132,7 +117,6 @@
       "icon": "finish"
     }
   ],
-
   "American Spin": [
     {
       "lat": 2392.233759,
@@ -140,7 +124,6 @@
       "name": "Wahiawa",
       "icon": "start"
     },
-
     {
       "lat": 1424.292396,
       "lng": 2244.5,
@@ -148,7 +131,6 @@
       "icon": "finish"
     }
   ],
-
   "911 Der Vogel": [
     {
       "lat": 1279.516452,
@@ -157,7 +139,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Royal": [
     {
       "lat": 1289.678755,
@@ -166,7 +147,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Leisure": [
     {
       "lat": 1430.761597,
@@ -175,7 +155,6 @@
       "icon": "challenge"
     }
   ],
-
   "911 Cruising": [
     {
       "lat": 2013.927929,
@@ -183,7 +162,6 @@
       "name": "Kaneohe Golf Course",
       "icon": "start"
     },
-
     {
       "lat": 1650.789949,
       "lng": 3651.852971,
@@ -191,7 +169,6 @@
       "icon": "finish"
     }
   ],
-
   "911 Uphill": [
     {
       "lat": 1430.761597,
@@ -199,7 +176,6 @@
       "name": "Aulinaii Resort",
       "icon": "start"
     },
-
     {
       "lat": 1901.608322,
       "lng": 1559.86285,
@@ -207,7 +183,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Bean Giver": [
     {
       "lat": 1301.57298,
@@ -216,7 +191,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Gig Lover": [
     {
       "lat": 1429.147674,
@@ -225,7 +199,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Window Shopper": [
     {
       "lat": 1326.662861,
@@ -234,7 +207,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Tribute": [
     {
       "lat": 1522.406182,
@@ -243,7 +215,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x C-8 Explosion": [
     {
       "lat": 1179.088096,
@@ -251,7 +222,6 @@
       "name": "Diamond Head",
       "icon": "start"
     },
-
     {
       "lat": 1328.008977,
       "lng": 2404.870163,
@@ -259,7 +229,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Tomorrowland": [
     {
       "lat": 1405.025416,
@@ -267,7 +236,6 @@
       "name": "Rule the Streets Container",
       "icon": "start"
     },
-
     {
       "lat": 2349.010687,
       "lng": 2251.125,
@@ -275,7 +243,6 @@
       "icon": "finish"
     }
   ],
-
   "Donut x Notorious": [
     {
       "lat": 1282.564262,
@@ -284,7 +251,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Chevy Rampage": [
     {
       "lat": 1301.57298,
@@ -293,7 +259,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Flying Dino": [
     {
       "lat": 1279.516452,
@@ -302,7 +267,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Hi Speed": [
     {
       "lat": 1315.20854,
@@ -311,7 +275,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x King Of Hawaii": [
     {
       "lat": 1286.38755,
@@ -320,7 +283,6 @@
       "icon": "challenge"
     }
   ],
-
   "Donut x Over The Top": [
     {
       "lat": 1399.36702,
@@ -1790,6 +1752,34 @@
       "lat": 681.966993,
       "lng": 5454.895046,
       "name": "Bawarian Perfection Finish",
+      "icon": "finish"
+    }
+  ],
+  "Prime Time Stroll": [
+    {
+      "lat": 1891.864193,
+      "lng": 4760.242851,
+      "name": "Prime Time Stroll",
+      "icon": "start"
+    },
+    {
+      "lat": 1006.553009,
+      "lng": 6050.249708,
+      "name": "Prime Time Stroll",
+      "icon": "finish"
+    }
+  ],
+  "Prime Time Asphalt": [
+    {
+      "lat": 661.785479,
+      "lng": 6104.067078,
+      "name": "Prime Time Asphalt",
+      "icon": "start"
+    },
+    {
+      "lat": 979.644324,
+      "lng": 6009.045783,
+      "name": "Prime Time Asphalt",
       "icon": "finish"
     }
   ]
